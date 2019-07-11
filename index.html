@@ -45,16 +45,12 @@
         fbq('track', 'PageView');
         
       </script>
-      <script type="text/javascript">
-        document.getElementById('mc-embedded-subscribe').addEventListener('click', function() {
-        fbq('track', 'Subscribe');
-        }, false);
-      </script>
       <noscript><img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=350083455680135&ev=PageView&noscript=1"
       /></noscript>
     <!-- End Facebook Pixel Code -->
   </head>
+
   <body>
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
@@ -245,6 +241,11 @@
                 <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_eb9102a6f041c56e986db8d4b_b116ecd2de" tabindex="-1" value=""></div>
                 <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
                 </div>
+                <script type="text/javascript">
+                  document.getElementById('mc-embedded-subscribe').addEventListener('click', function() {
+                    fbq('track', 'Subscribe');
+                  }, false);
+                  </script>
             </form>
             </div>
             <!--End mc_embed_signup--></li>
