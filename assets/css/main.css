@@ -573,16 +573,42 @@ form:not(.landing-form-section form) .button[type="submit"] {
 	background-color: #4a3f4f; /* Dark Plum */
 	color: rgba(255, 255, 255, 0.6); /* Lighter text for contrast */
 	padding: 4em 0 2em 0;
+    margin-bottom: 0em;
 }
 #footer .inner { max-width: 65em; width: calc(100% - 4em); margin: 0 auto; }
 #footer h4 { color: #ffffff; margin-bottom: 1em; }
 #footer ul { list-style: none; padding-left: 0; margin-bottom: 1.5em; }
 #footer ul li { padding: 0.25em 0; }
 #footer a { color: #d4af7a; /* Soft Gold links */ border-bottom-color: rgba(212, 175, 122, 0.4); }
+#footer a { color: #d4af7a; /* Soft Gold links */ border-bottom-color: rgba(212, 175, 122, 0.4); }
 #footer a:hover { color: #ffffff; border-bottom-color: #ffffff; }
 #footer .icons a { border-bottom: none; }
-#footer .icons a .icon:before { color: rgba(255, 255, 255, 0.6); transition: color 0.2s ease; }
-#footer .icons a:hover .icon:before { color: #ffffff; }
+
+/* --- Apply Font Awesome font explicitly to footer icons --- */
+#footer .icons a .icon:before {
+	font-family: FontAwesome !important; /* Force FontAwesome font */
+	font-style: normal;        /* Ensure not italic */
+    font-weight: normal;       /* Ensure not bold */
+    display: inline-block;     /* Needed for rendering */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	/* Existing styles below */
+	color: rgba(255, 255, 255, 0.6);
+	transition: color 0.2s ease;
+}
+/* --- End explicit FA application --- */
+
+#footer .icons a:hover .icon:before {
+	color: #ffffff;
+}
+
+/* You might also want to ensure the base icon class has Font Awesome if the above isn't enough */
+/*
+#footer .icons .icon.fa {
+    font-family: FontAwesome !important;
+}
+*/
 #footer label { color: #ffffff; }
 #footer input[type="email"] { background: rgba(255, 255, 255, 0.1); border-color: rgba(255, 255, 255, 0.2); color: #ffffff; margin-bottom: 1em; /* Ensure spacing */ }
 #footer input[type="email"]:focus { border-color: #d4af7a; box-shadow: 0 0 0 1px #d4af7a; }
@@ -619,6 +645,7 @@ body.landing-eyeliner #landing-hero { background-image: linear-gradient(rgba(0, 
 body.landing-facial-shading #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/pic09.jpg); }
 body.landing-paramedical #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/pic07.jpg); }
 body.landing-training #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/PMPhoto1.jpg); }
+body.landing-general-pmu #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/banner.webp); } /* Using main banner image */
 
 #landing-hero .inner { position: relative; z-index: 2; max-width: 55em; margin: 0 auto; width: calc(100% - 4em); }
 #landing-hero h1 { color: #ffffff; font-size: 2.5em; margin-bottom: 0.5em; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
@@ -693,4 +720,610 @@ section {
     #header .inner { width: calc(100% - 2em); }
     #banner .inner { width: calc(100% - 2em); }
     #footer .inner { width: calc(100% - 2em); }
+}
+
+
+
+/* --- Image Gallery --- */
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em; /* Space between images */
+    margin: 0 0 1.5em 0; /* Bottom margin for the gallery container */
+    padding: 0; /* Reset default padding */
+    list-style: none; /* Remove list style if you were using <ul> */
+}
+
+.image-gallery .gallery-item {
+    flex: 1 1 calc(33.333% - 1em); /* Default: 3 columns. Calculation accounts for gap. */
+    box-sizing: border-box; /* Include padding/border in element's total width/height */
+    margin-bottom: 0; /* Remove any potential extra bottom margin from child elements */
+}
+
+/* Style for the image container within a gallery item */
+.image-gallery .gallery-item .image.fit {
+    margin-bottom: 0; /* Remove default margin from .image.fit */
+    display: block; /* Ensure it behaves as a block */
+    line-height: 0; /* Remove extra space below image */
+}
+
+/* Style for the image itself */
+.image-gallery .gallery-item .image.fit img {
+    display: block;
+    width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 4px; /* Optional: match existing image style */
+    object-fit: cover; /* Ensures images cover the area, might crop slightly */
+    aspect-ratio: 1 / 1; /* Optional: Enforce square aspect ratio, adjust if needed */
+}
+
+/* Optional: Remove styling from .box.alt if it interferes with the gallery layout */
+.box.alt.gallery-box {
+    padding: 0;
+    margin: 0 0 1.5em 0;
+    border: none;
+    background: none;
+    box-shadow: none;
+}
+
+
+/* --- Responsive adjustments for gallery --- */
+
+/* Medium screens (e.g., tablets) */
+@media screen and (max-width: 980px) {
+    .image-gallery .gallery-item {
+        flex-basis: calc(50% - 0.75em); /* 2 columns */
+    }
+    .image-gallery {
+        gap: 1.25em; /* Adjust gap */
+    }
+}
+
+/* Small screens (e.g., large phones) */
+@media screen and (max-width: 736px) {
+     /* Keep 2 columns, or switch to 1 if preferred */
+      .image-gallery {
+        gap: 1em; /* Adjust gap */
+    }
+     .image-gallery .gallery-item .image.fit img {
+        aspect-ratio: 4 / 3; /* Adjust aspect ratio for smaller screens if needed */
+    }
+}
+
+/* Extra small screens (e.g., phones) */
+@media screen and (max-width: 480px) {
+    .image-gallery .gallery-item {
+        flex-basis: 100%; /* 1 column */
+    }
+     .image-gallery {
+        gap: 1em; /* Adjust gap */
+    }
+    .image-gallery .gallery-item .image.fit img {
+        aspect-ratio: 16 / 10; /* Adjust aspect ratio */
+    }
+}
+
+
+/* --- Form Input Width Fix --- */
+/* Ensure inputs/selects/textareas fill their column container within form rows */
+form .row > div[class*="u"] > input[type="text"],
+form .row > div[class*="u"] > input[type="password"],
+form .row > div[class*="u"] > input[type="email"],
+form .row > div[class*="u"] > input[type="tel"],
+form .row > div[class*="u"] > select,
+form .row > div[class*="u"] > textarea {
+    width: 100%;
+    box-sizing: border-box; /* Ensure padding/border are included in the 100% width */
+    vertical-align: top; /* Align elements consistently if heights differ slightly */
+}
+
+/* Remove default bottom margin added outside landing forms if it causes issues within rows */
+form:not(.landing-form-section form) .row input,
+form:not(.landing-form-section form) .row select,
+form:not(.landing-form-section form) .row textarea {
+    margin-bottom: 0; /* Let row padding handle vertical spacing */
+}
+
+/* Ensure the container divs themselves don't collapse unexpectedly */
+form .row > div[class*="u"] {
+    display: inline-block; /* Or flex, depending on exact layout needs, but inline-block often works */
+    vertical-align: top;
+    width: auto; /* Let grid classes control width */
+}
+
+/* Reset display for specific form layouts if needed */
+form .row.uniform > div[class*="u"] {
+     display: block; /* Rows in uniform context usually stack */
+}
+
+/* Ensure visible labels on contact form don't prevent input width */
+#main form label {
+    margin-bottom: 0.5em; /* Adjust spacing if needed */
+}
+
+/* ============================================= */
+/* Contact Page Form Layout Override             */
+/* ============================================= */
+
+/* Ensure the wrapper column itself has no inherent padding issues */
+#main .row > .form-column-wrapper {
+	padding-left: 0 !important; /* Remove gutter padding */
+    /* Ensure it behaves like a block container */
+    display: block !important;
+    width: 66.66667% !important; /* Explicitly set width based on 8u */
+}
+
+/* Target the container where the form is loaded */
+#contact-form-container {
+    padding: 0 !important; /* Remove any potential padding on the container itself */
+}
+
+/* Target the form's internal row */
+#contact-form-container form .row.uniform.\35 0\25 {
+	margin-left: 0 !important; /* Remove negative left margin */
+    /* You might still need top margin for spacing between rows */
+    /* margin-top: -1em; */
+}
+
+/* Target the columns (6u, 12u, etc.) INSIDE the form's row */
+#contact-form-container form .row.uniform.\35 0\25 > * {
+	padding-left: 0 !important; /* Remove the internal left padding */
+	padding-right: 0 !important; /* Also remove right padding just in case */
+    /* Re-apply top padding for vertical spacing */
+    padding-top: 1em !important;
+    padding-bottom: 0 !important; /* Remove bottom padding */
+}
+
+/* Ensure inputs/textarea fill 100% of their parent column */
+#contact-form-container input[type="text"],
+#contact-form-container input[type="email"],
+#contact-form-container input[type="tel"],
+#contact-form-container input[type="password"],
+#contact-form-container textarea,
+#contact-form-container select {
+	width: 100% !important;
+    box-sizing: border-box !important; /* Include padding/border in width */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 980px) {
+	#main .row > .form-column-wrapper {
+		width: 100% !important; /* Becomes full width */
+		padding-left: 0 !important; /* Ensure padding is still removed */
+        margin-left: 0 !important; /* Reset margin */
+	}
+    #contact-form-container form .row.uniform.\35 0\25 > * {
+        padding-top: 1.5em !important; /* Adjust spacing if needed for medium */
+    }
+}
+
+@media screen and (max-width: 736px) {
+    #contact-form-container form .row.uniform.\35 0\25 > * {
+        padding-top: 1.25em !important; /* Adjust spacing if needed for small */
+    }
+}
+
+@media screen and (max-width: 480px) {
+     /* Ensure xsmall stacking works correctly without horizontal padding */
+     #contact-form-container form .row.uniform.\35 0\25 > div[class*="u"] {
+         padding-left: 0 !important;
+         padding-right: 0 !important;
+         padding-top: 1.25em !important; /* Adjust top padding for xsmall stack */
+     }
+     /* Ensure 6u columns become full width */
+      #contact-form-container form .row.uniformu,
+      #contact-form-container form .row.uniform {
+        width: 100% !important;
+        margin-left: 0 !important;
+      }
+}
+
+
+#top-cta-bar {
+    background-color: #c88ea5; /* Dusty Rose - Primary Accent */
+    color: #ffffff;
+    text-align: center;
+    padding: 0.6em 1em; /* Adjust padding as needed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10002; /* Above content, below nav panel */
+    font-size: 0.95em;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    letter-spacing: 0.02em;
+    line-height: 1.4; /* Ensure text wraps cleanly if needed */
+}
+
+#top-cta-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.6);
+    transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+}
+
+#top-cta-bar a:hover {
+    color: rgba(255, 255, 255, 0.85);
+    border-bottom-color: rgba(255, 255, 255, 0.85);
+}
+
+/* Adjust header position to be below the CTA bar */
+#header {
+    top: 3em; /* Approximate height of the CTA bar - Adjust if padding changes */
+}
+
+/* Adjust main content padding to account for BOTH bars */
+body {
+    /* Original header height (4.5em) + CTA bar height (~3em) = ~7.5em */
+    padding-top: 7.5em; /* Increase padding to clear both bars */
+}
+
+/* Adjust Nav Panel Toggle position */
+.navPanelToggle {
+     top: 3.25em; /* Position below CTA bar, aligning with new header position */
+}
+
+/* Adjust Nav Panel position */
+#navPanel {
+	top: 3em; /* Start below the CTA bar */
+    height: calc(100% - 3em); /* Adjust height */
+}
+
+
+/* Responsive Adjustments for CTA Bar */
+@media screen and (max-width: 736px) {
+     #top-cta-bar {
+        padding: 0.7em 0.5em;
+        font-size: 0.9em;
+     }
+     #header {
+        top: 2.8em; /* Adjust based on mobile CTA height */
+     }
+      body {
+        /* Mobile header height (4.5em) + mobile CTA height (~2.8em) = ~7.3em */
+        padding-top: 7.3em;
+      }
+       .navPanelToggle {
+           top: 3.05em; /* Adjust alignment */
+       }
+        #navPanel {
+            top: 2.8em;
+             height: calc(100% - 2.8em);
+        }
+}
+@media screen and (max-width: 480px) {
+     #top-cta-bar {
+        padding: 0.8em 0.5em;
+        font-size: 0.85em;
+     }
+      #header {
+        top: 3em; /* Adjust based on xsmall CTA height */
+      }
+       body {
+        padding-top: 7.5em; /* Re-adjust */
+       }
+       .navPanelToggle {
+           top: 3.25em; /* Re-adjust alignment */
+       }
+         #navPanel {
+            top: 3em;
+             height: calc(100% - 3em);
+        }
+}
+
+/* --- Social Proof Section --- Enhanced UI/UX --- */
+.social-proof-section {
+    padding: 4em 0 4em 0; /* Increased padding */
+    background-color: #f7f7f9; /* Slightly different light background */
+    /* Optional subtle pattern/gradient: */
+    /* background-image: linear-gradient(135deg, #f7f7f9 0%, #fdfdfd 100%); */
+}
+
+.social-proof-section .inner {
+    max-width: 70em; /* Slightly wider container */
+}
+
+.social-proof-section .major.special h2 {
+    color: #4a3f4f; /* Use main heading color */
+    margin-bottom: 0.25em;
+}
+.social-proof-section .major.special p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+.reviews-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em; /* Increased gap */
+    justify-content: center;
+    margin-bottom: 3em;
+}
+
+.platform-reviews-container {
+    flex: 1 1 320px; /* Base size, allow growing */
+    max-width: calc(33.333% - 1.34em); /* Adjust calc for new gap */
+    background-color: #ffffff;
+    border-radius: 8px; /* Smoother radius */
+    border: 1px solid #e0e0e0;
+    border-top-width: 4px; /* Thicker top border for branding */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Enhanced shadow */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden; /* Clip content if needed */
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+.platform-reviews-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Platform specific top borders */
+.platform-reviews-container.google-card { border-top-color: #DB4437; }
+.platform-reviews-container.yelp-card { border-top-color: #d32323; }
+.platform-reviews-container.facebook-card { border-top-color: #3b5998; }
+
+.review-source {
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 1em 1.5em 0.75em 1.5em; /* Adjusted padding */
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #fafafa; /* Slight header background */
+    border-radius: 8px 8px 0 0; /* Match top radius, remove bottom */
+}
+/* Platform specific header text colors */
+.review-source.google > div:first-child { color: #DB4437; }
+.review-source.yelp > div:first-child { color: #d32323; }
+.review-source.facebook > div:first-child { color: #3b5998; }
+
+.review-source > div:first-child { /* Platform title */
+     display: flex;
+     align-items: center;
+     margin-bottom: 0.5em;
+     font-size: 1.05em; /* Slightly larger title */
+}
+
+.review-source .fa { /* Platform icon */
+    margin-right: 0.6em;
+    font-size: 1.25em; /* Larger platform icon */
+    min-width: 1.25em;
+}
+
+/* Rating Display styling */
+.rating-display {
+    font-size: 0.9em;
+    font-weight: normal;
+    color: #555;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.rating-display .stars {
+    margin-right: 0.6em;
+    color: #f0ad4e; /* Gold color for stars */
+    letter-spacing: 2px;
+}
+
+/* --- Apply Font Awesome font explicitly to star icons --- */
+.rating-display .stars .fa {
+    font-family: FontAwesome !important; /* Force FontAwesome font */
+    font-size: 1.2em;          /* Control star size */
+    font-style: normal;        /* Ensure not italic */
+    font-weight: normal;       /* Ensure not bold */
+    display: inline-block;     /* Needed for rendering */
+    line-height: 1;            /* Consistent line height */
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0; /* Reset margin */
+}
+/* --- End explicit FA application --- */
+
+
+/* Ensure correct FA characters display (These might be redundant if above works, but keep for safety) */
+.rating-display .stars .fa-star::before { content: "\f005"; }
+.rating-display .stars .fa-star-half-o::before { content: "\f123"; }
+.rating-display .stars .fa-star-o::before { content: "\f006"; } /* Empty star if needed */
+
+.rating-display .rating-value {
+    font-weight: 600;
+    margin-right: 0.5em;
+    color: #333;
+}
+.rating-display .review-count {
+    font-size: 0.9em;
+    color: #777;
+}
+
+
+/* Fixed Height Content Area */
+.review-content-area {
+    padding: 1.5em; /* Padding for the text */
+    flex-grow: 1; /* Allow this area to grow */
+    height: 300px; /* --- FIXED HEIGHT --- Adjust as needed */
+    overflow-y: auto; /* Add scroll if content exceeds height */
+    position: relative; /* Needed for absolute positioning of slides if using transitions */
+    background-color: #fff; /* Ensure background */
+}
+
+/* Review Slide Styling within fixed area */
+.review-card.review-slide {
+    display: none;
+    flex-direction: column;
+    /* If using fade transition: */
+    /* position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 1.5em;
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out; */
+}
+
+.review-card.review-slide.active-slide {
+    display: flex; /* Show the active slide */
+    /* If using fade transition: */
+    /* opacity: 1;
+    z-index: 2; */
+}
+
+.review-text {
+    font-style: normal; /* Remove default italic? Optional */
+    color: #444; /* Darker text */
+    margin-bottom: 1em;
+    flex-grow: 1;
+    line-height: 1.65; /* Improved readability */
+    font-size: 0.95em;
+    border-left: 3px solid #c88ea5; /* Accent border */
+    padding-left: 1em;
+    margin-left: 0;
+}
+.review-text::before { content: open-quote; font-size: 1.4em; color: #c88ea5; margin-right: 0.1em; } /* Optional quote marks */
+.review-text::after { content: close-quote; font-size: 1.4em; color: #c88ea5; margin-left: 0.1em; }
+
+
+.review-author {
+    font-weight: 600; /* Semi-bold */
+    color: #555;
+    font-size: 0.9em;
+    text-align: right;
+    margin-top: auto;
+    padding-top: 0.5em; /* Space above author */
+}
+
+.review-date {
+    font-weight: normal;
+    color: #888;
+    font-size: 0.9em;
+    display: block;
+}
+
+/* Review Controls Styling - Enhanced */
+.review-controls {
+    text-align: center;
+    padding: 0.75em 1.5em; /* Padding around buttons */
+    border-top: 1px solid #eee;
+    background-color: #fafafa; /* Match header background */
+    border-radius: 0 0 8px 8px; /* Match bottom radius */
+    margin-top: auto; /* Ensure it's at the bottom */
+}
+
+.review-controls button {
+    appearance: none;
+    background: #fff; /* White background */
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.4em;
+    width: 2.6em; /* Slightly larger */
+    height: 2.6em;
+    padding: 0;
+    line-height: 1;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, transform 0.1s ease;
+    vertical-align: middle;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.review-controls button img.control-icon {
+    display: block;
+    width: 50%; /* Adjust icon size */
+    height: 50%;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
+}
+
+.review-controls button:hover {
+    background-color: #eee;
+    border-color: #bbb;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+}
+.review-controls button:hover img.control-icon {
+    opacity: 0.9;
+}
+
+.review-controls button:active {
+    background-color: #ddd;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.15);
+    transform: scale(0.95); /* Click feedback */
+}
+
+/* Review Links Section */
+.review-links {
+    margin-top: 3em; /* More space above links */
+}
+.review-links p {
+    margin-bottom: 1.2em;
+    font-weight: 600; /* Semi-bold */
+    color: #4a3f4f;
+    font-size: 1.05em;
+}
+.review-links .button.alt {
+    margin: 0 0.5em 0.5em 0.5em; /* Space around buttons */
+    font-size: 0.9em; /* Slightly smaller buttons */
+}
+
+
+/* Responsive adjustments */
+@media screen and (max-width: 980px) {
+    .platform-reviews-container {
+        max-width: calc(50% - 1em); /* Adjust calc for gap */
+        flex-basis: calc(50% - 1em);
+    }
+     .reviews-container {
+        gap: 1.5em; /* Adjust gap */
+    }
+}
+
+@media screen and (max-width: 736px) {
+    .platform-reviews-container {
+        max-width: 85%;
+        flex-basis: 85%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+     .reviews-container {
+        gap: 2em; /* Increase gap for single column */
+    }
+    .review-content-area {
+         height: 220px; /* Adjust fixed height for mobile if needed */
+    }
+}
+@media screen and (max-width: 480px) {
+    .social-proof-section {
+        padding: 3em 0;
+    }
+    .platform-reviews-container {
+        max-width: 95%;
+        flex-basis: 95%;
+    }
+    .review-source {
+        font-size: 1em;
+        padding: 0.75em 1em 0.5em 1em;
+    }
+    .rating-display {
+        font-size: 0.85em;
+    }
+     .review-content-area {
+         padding: 1.25em;
+         height: 240px; /* May need more height on small screens */
+    }
+    .review-text {
+        font-size: 0.9em;
+    }
+    .review-controls {
+        padding: 0.5em 1em;
+    }
+    .review-controls button {
+         width: 2.8em; /* Even larger tap targets */
+         height: 2.8em;
+    }
 }

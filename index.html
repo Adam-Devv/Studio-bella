@@ -8,6 +8,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
 		<link rel="icon" href="images/eyebrowBrowserTabIcon.jpg">
 
 		<!-- Google Tag Manager -->
@@ -48,12 +49,32 @@
 		</section>
 
 		<section>
-			<div class = "inner">
-				
-				<!-- <h4>August/September 2023 Specials: 25% off first time Eyeliner and Camouflage, $1000 off PMU courses!</h4> -->
-				
-				<!-- <h4>Happy Campers are accepting donations for the less fortunate in Austin.  Head over to our <a style = "color: blue;" href = "donations.html">donations page</a> to learn more!</h4> -->
-			</div>
+			<!-- Placeholder for Social Proof Section -->
+<div id="social-proof-placeholder"></div>
+
+<script>
+  fetch('_includes/social-proof.html') // Use '../_includes/social-proof.html' if in landing_pages/
+    .then(response => {
+        if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
+        return response.text();
+    })
+    .then(html => {
+      const placeholder = document.getElementById('social-proof-placeholder');
+      if (placeholder) {
+          placeholder.innerHTML = html;
+          // Call the initialization function from social-proof-slider.js
+          if (typeof initSocialProofSlider === 'function') {
+              initSocialProofSlider(placeholder); // Pass the placeholder element itself
+          } else {
+              console.error('initSocialProofSlider function not found. Was social-proof-slider.js loaded?');
+          }
+      } else {
+          console.error('Social proof placeholder element not found.');
+      }
+    })
+    .catch(error => console.error('Error loading or processing social proof section:', error));
+</script>
+<!-- End Social Proof Section -->
 		</section>
 
 		<section id="one">
@@ -66,7 +87,7 @@
 				<p>We offer a wide range of services such as Lips, Lip Liner, Eyebrows, Eyelienr, Blush, Beauty Marks, Repairs, Areola Repigmentation, and much more!</p>
 
 				<ul class="actions">
-					<li><a href="#" class="button alt">Learn More about our Services and Pricing</a></li>
+					<li><a href="services.html" class="button alt">Learn More about our Services and Pricing</a></li>
 				</ul>
 
 				<h2>Free Consultation</h2>
@@ -77,7 +98,7 @@
 		<section>
 			<div class = "inner">
 
-				<p><span class="image left"><img src="images/CookieAWTrim.webp" loading="lazy" alt="" /></span><h4>Cookie Bandel - Master Permanent Makeup Technician</h4>Cookie Bandel has been practicing Permanent Makeup since 2008 and is a well-established member of the Austin Tattoo Community and is featured on KVUE Austin and in Austin Woman Magazine. From makeup repairs to aereola repigmentation, she is well known as one of the top professionals in Texas, with clients travelling from other cities and states to get her services.</p>
+				<p><span class="image left"><img src="images/CookieAWTrim.webp" loading="lazy" alt="Cookie Bandel Master Permanent Makeup Technician" /></span><h4>Cookie Bandel - Master Permanent Makeup Technician</h4>Cookie Bandel has been practicing Permanent Makeup since 2008 and is a well-established member of the Austin Tattoo Community and is featured on KVUE Austin and in Austin Woman Magazine. From makeup repairs to aereola repigmentation, she is well known as one of the top professionals in Texas, with clients travelling from other cities and states to get her services.</p>
 			</div>
 		</section>
 
@@ -142,18 +163,20 @@
 		<section>
 			<div class = "inner">
 				<h2>Before and After</h2>
-				<div class="box alt">
-					<div  class="row 50% uniform">
-						<div class="6u"><span class="image fit"><img src="images/beforeAfter/ba1.jpg" loading="lazy" alt="" /></span></div>
-						<div class="6u"><span class="image fit"><img src="images/beforeAfter/ba2.jpg" loading="lazy" alt="" /></span></div>
-						<div class="6u"><span class="image fit"><img src="images/beforeAfter/ba3.jpg" loading="lazy" alt="" /></span></div>
-						<div class="6u"><span class="image fit"><img src="images/beforeAfter/ba4.jpg" loading="lazy" alt="" /></span></div>
-						<div class="6u"><span class="image fit"><img src="images/beforeAfter/ba5.jpg" loading="lazy" alt="" /></span></div>
-						<div class="6u"><span class="image fit"><img src="images/beforeAfter/ba6.jpg" loading="lazy" alt="" /></span></div>
-					</div>
-				</div>
+                <!-- Updated Gallery Section -->
+				<div class="box alt gallery-box">
+                    <div class="image-gallery">
+                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba1.jpg" loading="lazy" alt="Eyebrow Before After" /></span></div>
+                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba2.jpg" loading="lazy" alt="Eyeliner Before After" /></span></div>
+                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba5.jpg" loading="lazy" alt="Lips Before After" /></span></div>
+                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba4.jpg" loading="lazy" alt="Eyeliner Before After 2" /></span></div>
+                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba7.jpg" loading="lazy" alt="Eyebrow Before After 2" /></span></div>
+                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba6.jpg" loading="lazy" alt="Lips Before After 2" /></span></div>
+                    </div>
+                </div>
+                <!-- End Updated Gallery Section -->
 				<ul class="actions">
-					<li><a href="gallery.html" class="button alt">More Before and After Pictures</a></li>
+					<li><a href="beforeAfterGallery.html" class="button alt">More Before and After Pictures</a></li>
 				</ul>
 			</div>
 		</section>
@@ -161,9 +184,10 @@
 		<section>
 			<div class = "inner" >
 				<h2 style = "text-align: center;">Meet Studio Bella</h2>
-			  <video controls = "true">
+			  <video controls = "true" style="width:100%; max-width: 800px; margin: 0 auto; display:block;">
 			    <source src="video/STUDIOBELLAMAKEUP 0920 R2.mp4" type="video/mp4">
-			  </video>    
+                Your browser does not support the video tag.
+			  </video>
 			</div>
 		</section>
 
@@ -175,6 +199,7 @@
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+        <script src="assets/js/social-proof-slider.js"></script>
 
 	</body>
 </html>

@@ -6,18 +6,23 @@
 
     <!-- Use 50% gutter row for consistent spacing -->
     <div class="row uniform 50%">
-        <!-- Name Field -->
+        <!-- First Name Field -->
         <div class="6u 12u$(xsmall)">
-            <label for="landing-name" class="sr-only">Name</label> <!-- Label for accessibility -->
-            <input type="text" name="name" id="landing-name" placeholder="Name*" required />
+            <label for="landing-first-name" class="sr-only">First Name</label> <!-- Label for accessibility -->
+            <input type="text" name="first_name" id="landing-first-name" placeholder="First Name*" required />
+        </div>
+        <!-- Last Name Field -->
+        <div class="6u$ 12u$(xsmall)">
+            <label for="landing-last-name" class="sr-only">Last Name</label> <!-- Label for accessibility -->
+            <input type="text" name="last_name" id="landing-last-name" placeholder="Last Name*" required />
         </div>
         <!-- Email Field -->
-        <div class="6u$ 12u$(xsmall)">
+        <div class="6u 12u$(xsmall)"> <!-- Changed to 6u to potentially align with phone -->
             <label for="landing-email" class="sr-only">Email</label> <!-- Label for accessibility -->
             <input type="email" name="_replyto" id="landing-email" placeholder="Email*" required />
         </div>
         <!-- Phone Field -->
-        <div class="12u$">
+         <div class="6u$ 12u$(xsmall)"> <!-- Changed to 6u$ -->
             <label for="landing-phone" class="sr-only">Phone</label> <!-- Label for accessibility -->
             <input type="tel" name="phone" id="landing-phone" placeholder="Phone (Optional)" />
         </div>

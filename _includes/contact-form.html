@@ -1,0 +1,40 @@
+<!-- Reusable Contact Form Structure -->
+<form action="https://formspree.io/f/mdopqyvv" method="POST">
+    <!-- Use 50% gutter row for consistent spacing -->
+    <div class="row uniform 50%">
+        <!-- First Name Field -->
+        <div class="6u 12u$(xsmall)">
+            <label for="contact-first-name" class="sr-only">First Name</label> <!-- Label for accessibility -->
+            <input type="text" name="first_name" id="contact-first-name" placeholder="First Name*" required />
+        </div>
+        <!-- Last Name Field -->
+        <div class="6u$ 12u$(xsmall)">
+            <label for="contact-last-name" class="sr-only">Last Name</label> <!-- Label for accessibility -->
+            <input type="text" name="last_name" id="contact-last-name" placeholder="Last Name*" required />
+        </div>
+        <!-- Email Field -->
+        <div class="6u 12u$(xsmall)">
+            <label for="contact-email" class="sr-only">Email</label> <!-- Label for accessibility -->
+            <input type="email" name="_replyto" id="contact-email" placeholder="Email*" required />
+        </div>
+        <!-- Phone Field -->
+         <div class="6u$ 12u$(xsmall)">
+            <label for="contact-phone" class="sr-only">Phone</label> <!-- Label for accessibility -->
+            <input type="tel" name="phone" id="contact-phone" placeholder="Phone (Optional)" />
+        </div>
+        <!-- Message Field -->
+        <div class="12u$">
+            <label for="contact-message" class="sr-only">Message</label> <!-- Label for accessibility -->
+            <textarea name="message" id="contact-message" placeholder="Your message*" rows="4" required></textarea>
+        </div>
+        <!-- Actions -->
+        <div class="12u$">
+            <ul class="actions" style="margin: 0;"> <!-- Remove default margin from actions ul -->
+                <li><button type="submit" class="button special fit">Send Message</button></li>
+            </ul>
+        </div>
+    </div>
+</form>
+<!-- Add screen-reader only class to CSS if not already present in main.css -->
+<!-- You might want to move this style to main.css if used elsewhere -->
+<style>.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; white-space: nowrap; }</style>

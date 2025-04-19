@@ -1,0 +1,186 @@
+/* assets/css/blog.css */
+
+/* Inherits styles from main.css */
+
+/* --- Blog Listing Page Styles --- */
+.blog-posts-container {
+    margin-top: 2em;
+}
+
+.blog-post-summary {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 2.5em;
+    margin-bottom: 2.5em;
+}
+
+.blog-post-summary:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.blog-post-summary header {
+    margin-bottom: 1em;
+}
+
+.blog-post-summary .post-title {
+    font-size: 1.6em; /* Adjust title size */
+    margin-bottom: 0.25em;
+    color: #4a3f4f; /* Match heading color */
+    line-height: 1.3;
+}
+.blog-post-summary .post-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: none;
+    transition: color 0.2s ease-in-out;
+}
+.blog-post-summary .post-title a:hover {
+    color: #c88ea5; /* Primary accent on hover */
+}
+
+
+.blog-post-summary .post-meta {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 1em;
+    line-height: 1.5;
+}
+
+.blog-post-summary .post-date {
+    font-weight: 600; /* Slightly bolder date */
+    color: #555;
+}
+
+.blog-post-summary .post-author {
+    font-style: italic;
+}
+
+.blog-post-summary .post-excerpt {
+    color: #555;
+    line-height: 1.7; /* Improve excerpt readability */
+    margin-bottom: 1.5em;
+}
+
+.blog-post-summary .actions {
+    margin-bottom: 0; /* Remove default bottom margin if any */
+}
+
+@media screen and (max-width: 736px) {
+    .blog-post-summary .post-title {
+        font-size: 1.4em;
+    }
+     .blog-post-summary {
+        padding-bottom: 2em;
+        margin-bottom: 2em;
+    }
+}
+
+
+/* Add specific styles for blog content readability and structure */
+#main.blog-post .inner {
+    max-width: 800px; /* Limit width for better readability on wide screens */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#main.blog-post h1 {
+    font-size: 2.4em; /* Slightly larger for main title */
+    margin-bottom: 1.5em;
+    line-height: 1.3;
+}
+
+#main.blog-post h2 {
+    font-size: 1.9em;
+    margin-top: 2em;
+    margin-bottom: 1em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid #eee; /* Subtle separator */
+    line-height: 1.4;
+}
+
+#main.blog-post h3 {
+    font-size: 1.5em;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
+    color: #5e5064; /* Slightly lighter heading color */
+    line-height: 1.4;
+}
+
+#main.blog-post p {
+    margin-bottom: 1.25em; /* Slightly more space between paragraphs */
+    line-height: 1.8; /* Increase line height for readability */
+    color: #444; /* Slightly darker text than default if needed */
+}
+
+#main.blog-post ul {
+    list-style: disc;
+    margin-left: 1.5em; /* Indent list */
+    margin-bottom: 1.5em;
+    padding-left: 1em;
+}
+
+#main.blog-post ul li {
+    padding-left: 0.5em;
+    margin-bottom: 0.6em; /* Space between list items */
+    line-height: 1.7;
+}
+
+/* Style for blockquotes if used in future posts */
+#main.blog-post blockquote {
+    border-left: 4px solid #c88ea5;
+    margin: 1.5em 0 1.5em 1em;
+    padding: 0.5em 1.5em;
+    font-style: italic;
+    color: #555;
+    background-color: #f9f9f9;
+    border-radius: 0 4px 4px 0;
+}
+#main.blog-post blockquote p {
+    margin-bottom: 0.5em;
+}
+#main.blog-post blockquote footer {
+    margin-top: 0.5em;
+    font-style: normal;
+    font-weight: bold;
+    color: #333;
+    font-size: 0.9em;
+}
+#main.blog-post blockquote footer:before {
+    content: '— ';
+}
+
+/* Call to Action Styling */
+#main.blog-post .cta-block {
+    text-align: center;
+    margin-top: 3em;
+    margin-bottom: 2em;
+    padding: 2em;
+    background-color: #f8f8f8; /* Light background */
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+#main.blog-post .cta-block .button {
+    font-size: 1em; /* Adjust button size if needed */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 736px) {
+    #main.blog-post h1 {
+        font-size: 2em;
+    }
+    #main.blog-post h2 {
+        font-size: 1.6em;
+    }
+    #main.blog-post h3 {
+        font-size: 1.3em;
+    }
+    #main.blog-post p,
+    #main.blog-post ul li {
+        line-height: 1.7;
+    }
+     #main.blog-post .cta-block {
+        padding: 1.5em;
+     }
+}
