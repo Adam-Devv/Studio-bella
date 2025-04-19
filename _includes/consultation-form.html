@@ -1,0 +1,39 @@
+<!-- Reusable Consultation Form Structure -->
+<form action="https://formspree.io/f/mdopqyvv" method="POST">
+    <!-- Hidden fields will be populated by JavaScript -->
+    <input type="hidden" name="_subject" value="">
+    <input type="hidden" name="service_interest" value="">
+
+    <!-- Use 50% gutter row for consistent spacing -->
+    <div class="row uniform 50%">
+        <!-- Name Field -->
+        <div class="6u 12u$(xsmall)">
+            <label for="landing-name" class="sr-only">Name</label> <!-- Label for accessibility -->
+            <input type="text" name="name" id="landing-name" placeholder="Name*" required />
+        </div>
+        <!-- Email Field -->
+        <div class="6u$ 12u$(xsmall)">
+            <label for="landing-email" class="sr-only">Email</label> <!-- Label for accessibility -->
+            <input type="email" name="_replyto" id="landing-email" placeholder="Email*" required />
+        </div>
+        <!-- Phone Field -->
+        <div class="12u$">
+            <label for="landing-phone" class="sr-only">Phone</label> <!-- Label for accessibility -->
+            <input type="tel" name="phone" id="landing-phone" placeholder="Phone (Optional)" />
+        </div>
+        <!-- Message Field -->
+        <div class="12u$">
+            <label for="landing-message" class="sr-only">Message</label> <!-- Label for accessibility -->
+            <textarea name="message" id="landing-message" placeholder="Your questions (Optional)" rows="3"></textarea>
+        </div>
+        <!-- Actions -->
+        <div class="12u$">
+            <ul class="actions" style="margin: 0;"> <!-- Remove default margin from actions ul -->
+                <li><button type="submit" class="button special fit">Request My Consultation</button></li>
+            </ul>
+        </div>
+    </div>
+</form>
+<!-- Add screen-reader only class to CSS if not already present in main.css -->
+<!-- You might want to move this style to main.css if used elsewhere -->
+<style>.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }</style>
