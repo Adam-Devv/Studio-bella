@@ -1,205 +1,331 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		
-		<title>Studio Bella Permanent Makeup Home</title>
-		<meta name ="description" content="Studio Bella specializes in permanent makeup tattoos and tattoo repairs. Eyebrows, Lips, Eyeliner, Repairs, Areola Re-pigmentation, Blush, Beauty Marks and more!"/>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-		<link rel="icon" href="images/eyebrowBrowserTabIcon.jpg">
+<head>
+    <title>Studio Bella | Expert Permanent Makeup Austin, TX | Free Consult</title> <!-- Enhanced Title -->
+    <meta name ="description" content="Studio Bella is Austin's premier permanent makeup studio. Master Technician Cookie Bandel offers natural-looking eyebrows, eyeliner, lip blush, paramedical tattooing, and corrections. Book your free consultation!"/> <!-- Enhanced Description -->
+    <meta name="keywords" content="permanent makeup austin, microblading austin, lip blush austin, permanent eyeliner austin, paramedical tattoo austin, studio bella, cookie bandel, pmu austin"> <!-- Added Keywords -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- Corrected CSS Paths -->
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+    <!-- Corrected Favicon Path -->
+    <link rel="icon" href="assets/images/eyebrowBrowserTabIcon.jpg">
 
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PNKPQBX');</script>
-		<!-- End Google Tag Manager -->
+    
 
-		<!-- MAILCHIMP SIGN UP FORM POP UP -->
-		<!-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/eb9102a6f041c56e986db8d4b/554005f386c0fa5a97911e9d2.js");</script> -->
-		
-		<!-- Google Optimize Code -->
-		<script async src="https://www.googleoptimize.com/optimize.js?id=OPT-W6H8L6B"></script>
+    <!-- MAILCHIMP SIGN UP FORM POP UP (Optional - uncomment if needed) -->
+    <!-- <script id="mcjs">!function(c,h,i,m,p){m=c.createElement(h),p=c.getElementsByTagName(h)[0],m.async=1,m.src=i,p.parentNode.insertBefore(m,p)}(document,"script","https://chimpstatic.com/mcjs-connected/js/users/eb9102a6f041c56e986db8d4b/554005f386c0fa5a97911e9d2.js");</script> -->
 
-	<script src="assets/js/globalHead.js"></script>
+    <!-- Google Optimize Code -->
+    <script async src="https://www.googleoptimize.com/optimize.js?id=OPT-W6H8L6B"></script>
+
+    <!-- Corrected Global Head Path -->
+    <script src="assets/js/globalHead.js"></script>
+
+    <!-- Custom Styles for Banner -->
+    <style>
+        #banner {
+            /* Reference updated image path - mainPageBanner.webp is a good choice */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), url("assets/images/banners/mainPageBanner.webp");
+            background-size: cover;
+            background-position: center center;
+        }
+
+        /* Simple Service Highlight Section Style */
+        .service-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 1.5em;
+            text-align: center;
+            margin-top: 2em;
+        }
+        .service-highlight-item {
+            flex: 1 1 200px; /* Adjust min-width as needed */
+            max-width: 250px;
+            padding: 1.5em;
+            background-color: #f9f9f9;
+            border-radius: 6px;
+            border: 1px solid #eee;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .service-highlight-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        .service-highlight-item img {
+            max-width: 80px; /* Control image size */
+            height: 80px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 1em;
+            border: 3px solid #c88ea5; /* Accent color border */
+        }
+        .service-highlight-item h4 {
+            margin-bottom: 0.5em;
+            font-size: 1.2em;
+        }
+         .service-highlight-item h4 a {
+            color: inherit;
+            border-bottom: none;
+         }
+         .service-highlight-item h4 a:hover {
+            color: #c88ea5;
+         }
+        .service-highlight-item p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        @media screen and (max-width: 736px) {
+            .service-highlight-item {
+                 flex-basis: calc(50% - 1em); /* 2 columns on smaller screens */
+            }
+        }
+         @media screen and (max-width: 480px) {
+            .service-highlight-item {
+                 flex-basis: 100%; /* Stack on extra small screens */
+            }
+        }
+    </style>
 </head>
-	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNKPQBX"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
+<body>
+    
 
+    <!-- Import NavMenu - Corrected Path -->
+    <script language="javascript" type="text/javascript" src="assets/js/navMenu.js"></script>
 
-		<!-- Import NavMenu -->
-		<script language="javascript" type="text/javascript" src="assets/js/navMenu.js"></script>
+    <!-- Banner - Enhanced Content and Links -->
+    <section id="banner">
+        <div class="inner">
+            <h1>Studio Bella: Austin's Premier<br /><span>Permanent Makeup Studio</span></h1>
+            <p>Expertly applied, natural-looking eyebrows, eyeliner, lip blush, and paramedical tattooing by Master Technician Cookie Bandel.</p>
+            <ul class="actions">
+                <!-- Corrected Button Links -->
+                <li><a href="services.html" class="button special">Explore Our Services</a></li>
+                <li><a href="consultation.html" class="button alt">Book a Free Consultation</a></li>
+            </ul>
+        </div>
+    </section>
 
-		<!-- Banner -->
-		<section id="banner">
-			<div class="inner">
-				<h1>Studio Bella: <span><br />
-				Permanent Makeup Studio</span></h1>
-				<ul class="actions">
-					<li><a href="services.html" class="button alt">Learn More</a></li>
-				</ul>
-			</div>
-		</section>
+    <!-- Social Proof Section -->
+    <section id="social-proof-section-wrapper" aria-labelledby="social-proof-heading">
+        <!-- Placeholder for Social Proof Section -->
+        <div id="social-proof-placeholder"></div>
+        <!-- Fetch and Inject Script -->
+        <script>
+          fetch('_includes/social-proof.html') // Correct path from root
+            .then(response => {
+                if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
+                return response.text();
+            })
+            .then(html => {
+              const placeholder = document.getElementById('social-proof-placeholder');
+              if (placeholder) {
+                  placeholder.innerHTML = html;
+                  // Call the initialization function from social-proof-slider.js
+                  if (typeof initSocialProofSlider === 'function') {
+                      // Ensure the slider init runs *after* the HTML is inserted
+                      // We need to target the newly added container inside the placeholder
+                      const socialProofSection = placeholder.querySelector('#social-proof');
+                      if (socialProofSection) {
+                          initSocialProofSlider(socialProofSection);
+                      } else {
+                          console.error('Could not find #social-proof element within placeholder.');
+                      }
+                  } else {
+                      console.error('initSocialProofSlider function not found. Was social-proof-slider.js loaded?');
+                  }
+              } else {
+                  console.error('Social proof placeholder element not found.');
+              }
+            })
+            .catch(error => console.error('Error loading or processing social proof section:', error));
+        </script>
+        <!-- End Social Proof Section -->
+    </section>
 
-		<section>
-			<!-- Placeholder for Social Proof Section -->
-<div id="social-proof-placeholder"></div>
+    <!-- Section One: What is Permanent Makeup? - Enhanced with Links -->
+    <section id="one">
+        <div class="inner">
+            <header class="major special">
+                <h2>What is Permanent Cosmetic Makeup?</h2>
+            </header>
+            <p><a href="services.html">Permanent cosmetic makeup</a>, also known as micropigmentation or cosmetic tattooing, involves implanting colored pigment into the upper layer of the skin (dermis). This creates long-lasting enhancements that mimic traditional makeup.</p>
+            <p>Procedures utilize specialized tools, including digital machines or manual methods (<a href="landing/eyebrows.html">like microblading</a>). The process starts with a thorough <a href="consultation.html">free consultation</a> to discuss your goals, followed by pigment application, and typically includes a follow-up visit to perfect the results.</p>
+            <p>Studio Bella offers a wide range of services including <a href="landing/eyebrows.html">Eyebrows</a> (Microblading & Powder Brows), <a href="landing/eyeliner.html">Eyeliner</a> (Classic & Lash Enhancement), <a href="landing/lips.html">Lips</a> (Liner & Lip Blush), Beauty Marks, <a href="landing/pmu-correction-removal.html">Corrections/Removal</a>, and specialized <a href="landing/paramedical.html">Paramedical Procedures</a> like Areola Restoration and Scar Camouflage.</p>
 
-<script>
-  fetch('_includes/social-proof.html') // Use '../_includes/social-proof.html' if in landing_pages/
-    .then(response => {
-        if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
-        return response.text();
-    })
-    .then(html => {
-      const placeholder = document.getElementById('social-proof-placeholder');
-      if (placeholder) {
-          placeholder.innerHTML = html;
-          // Call the initialization function from social-proof-slider.js
-          if (typeof initSocialProofSlider === 'function') {
-              initSocialProofSlider(placeholder); // Pass the placeholder element itself
-          } else {
-              console.error('initSocialProofSlider function not found. Was social-proof-slider.js loaded?');
-          }
-      } else {
-          console.error('Social proof placeholder element not found.');
-      }
-    })
-    .catch(error => console.error('Error loading or processing social proof section:', error));
-</script>
-<!-- End Social Proof Section -->
-		</section>
+            <ul class="actions">
+                <li><a href="services.html" class="button alt">View All Services and Pricing</a></li>
+            </ul>
+        </div>
+    </section>
 
-		<section id="one">
-			<div class="inner">
-			
-				<h2>Permanent Cosmetics</h2>
-			
-				<p>Permanent cosmetic makeup is cosmetic tattooing. The specialized techniques used for permanent cosmetics are often referred to as 'micropigmentation', 'micropigment implantation' or 'dermagraphics.' The cosmetic implantation technique deposits colored pigment into the upper reticular layer of the dermis.</p>
-				<p>Permanent cosmetics procedures are performed using various methods, including the traditional tattoo or coil machines, the pen or rotary machine and the non-machine or hand method. The process includes an initial consultation, then application of pigment, and at least one or more follow up visits for adjusting the color or density of the pigment.</p>
-				<p>We offer a wide range of services such as Lips, Lip Liner, Eyebrows, Eyelienr, Blush, Beauty Marks, Repairs, Areola Repigmentation, and much more!</p>
-
-				<ul class="actions">
-					<li><a href="services.html" class="button alt">Learn More about our Services and Pricing</a></li>
-				</ul>
-
-				<h2>Free Consultation</h2>
-				<p>Consultations are always free and only take 15 to 30 minutes. They are thorough and extremely educational. I also have many professional makeup books and photo albums of my own work filled with pictures to help you see all that you can have done that you might not have even thought of before!  Schedule your consultation on zoom or in person!</p>
-			</div>
-		</section>
-
-		<section>
-			<div class = "inner">
-
-				<p><span class="image left"><img src="images/CookieAWTrim.webp" loading="lazy" alt="Cookie Bandel Master Permanent Makeup Technician" /></span><h4>Cookie Bandel - Master Permanent Makeup Technician</h4>Cookie Bandel has been practicing Permanent Makeup since 2008 and is a well-established member of the Austin Tattoo Community and is featured on KVUE Austin and in Austin Woman Magazine. From makeup repairs to aereola repigmentation, she is well known as one of the top professionals in Texas, with clients travelling from other cities and states to get her services.</p>
-			</div>
-		</section>
-
-		<section id="two">
-			<div class="inner">
-				<h2>Why Choose Permanent Makeup from Studio Bella?</h2>
-			</div>
-			<div class="inner">
-				<article>
-					<div class="content">
-						<header>
-							<h3>Save Time</h3>
-						</header>
-						<!-- <div class="image fit">
-							<img src="images/pic01.jpg" alt="" />
-						</div> -->
-						<p>Cut time off of your routine every single day. If your schedule is too busy, and you simply have too much to do, the last thing you want to do is spend that time getting ready. This means you can go swimming, work out, or shower without a thought about your makeup!</p>
-					</div>
-					<div class="content">
-						<header>
-							<h3>Safety</h3>
-						</header>
-						<p>Cookie is well known for her great work and is often the choice for makeup repairs due to her expertise in the field.</p>
-					</div>
-					<div class="content">
-						<header>
-							<h3>Paramedical Options</h3>
-						</header>
-						<p>From repairs and hair simulation, to areola repigmentation and scar camouflage, we can help. Cancer patients are also qualified for free paramedical procedures.</p>
-					</div>
-					
-				</article>
-				<article class="alt">
-					<div class="content">
-						<header>
-							<h3>Customization</h3>
-						</header>
-						<p>Every client is different. Cookie makes sure to cater your look to what YOU want.</p>
-					</div>
-					<div class="content">
-						<header>
-							<h3>Long-Lasting</h3>
-						</header>
-						<p>Permanent makeup can last up to 18 months depending on location, and then all you need is a touchup to restore it to its former glory!</p>
-					</div>
-					<div class="content">
-						<header>
-							<h3>Affordable</h3>
-						</header>
-						<p>Save not just time, but money by cutting out your various makeup products with single procedures that last years or more.</p>
-					</div>
-					<div class="content">
-						<header>
-							<h3>Disabilities</h3>
-						</header>
-						<p>A variety of disabilities that impair motor skills, such as Parkinsons and Multiple Scerlosis make it difficult for people to apply makeup themselves.</p>
-					</div>
-				</article>
-			</div>
-		</section>
-
-		<section>
-			<div class = "inner">
-				<h2>Before and After</h2>
-                <!-- Updated Gallery Section -->
-				<div class="box alt gallery-box">
-                    <div class="image-gallery">
-                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba1.jpg" loading="lazy" alt="Eyebrow Before After" /></span></div>
-                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba2.jpg" loading="lazy" alt="Eyeliner Before After" /></span></div>
-                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba5.jpg" loading="lazy" alt="Lips Before After" /></span></div>
-                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba4.jpg" loading="lazy" alt="Eyeliner Before After 2" /></span></div>
-                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba7.jpg" loading="lazy" alt="Eyebrow Before After 2" /></span></div>
-                        <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba6.jpg" loading="lazy" alt="Lips Before After 2" /></span></div>
-                    </div>
+    <!-- NEW Service Highlight Section -->
+    <section id="service-highlights-section" style="padding: 3em 0; background-color: #fff;">
+        <div class="inner">
+             <header class="major special">
+                <h2>Popular Services</h2>
+             </header>
+            <div class="service-highlights">
+                <div class="service-highlight-item">
+                    <img src="assets/images/general_photos/eyebrow1.webp" alt="Permanent Eyebrows Icon" loading="lazy">
+                    <h4><a href="landing/eyebrows.html">Permanent Eyebrows</a></h4>
+                    <p>Microblading, Powder, Combo. Perfectly shaped, natural brows.</p>
                 </div>
-                <!-- End Updated Gallery Section -->
-				<ul class="actions">
-					<li><a href="beforeAfterGallery.html" class="button alt">More Before and After Pictures</a></li>
-				</ul>
-			</div>
-		</section>
+                <div class="service-highlight-item">
+                     <img src="assets/images/general_photos/eyeliner1.webp" alt="Permanent Eyeliner Icon" loading="lazy">
+                    <h4><a href="landing/eyeliner.html">Permanent Eyeliner</a></h4>
+                    <p>Smudge-proof definition. Lash enhancement, classic, or winged.</p>
+                </div>
+                <div class="service-highlight-item">
+                    <img src="assets/images/general_photos/lips1.webp" alt="Lip Blush Icon" loading="lazy">
+                    <h4><a href="landing/lips.html">Lip Blush & Liner</a></h4>
+                    <p>Enhance color & shape. Natural tint or defined border.</p>
+                </div>
+                 <div class="service-highlight-item">
+                    <img src="assets/images/general_photos/faceGeneric3.webp" alt="Paramedical Tattooing Icon" loading="lazy">
+                    <h4><a href="landing/paramedical.html">Paramedical & Correction</a></h4>
+                    <p>Areola restoration, scar camouflage, PMU fixes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-		<section>
-			<div class = "inner" >
-				<h2 style = "text-align: center;">Meet Studio Bella</h2>
-			  <video controls = "true" style="width:100%; max-width: 800px; margin: 0 auto; display:block;">
-			    <source src="video/STUDIOBELLAMAKEUP 0920 R2.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-			  </video>
-			</div>
-		</section>
 
-		<!-- Import Footer -->
-		<script language="javascript" type="text/javascript" src="assets/js/footer.js"></script>
+    <!-- About Cookie Section - Updated Image Path and Links -->
+    <section id="about-cookie" style="padding: 4em 0 2em 0; background-color: #f8f8f8;">
+        <div class="inner">
+            <header class="major special">
+                <h2>Meet Your Artist</h2>
+            </header>
+            <p style="text-align: center;"><span class="image" style="display: inline-block; max-width: 250px; margin-bottom: 1.5em;"><img src="assets/images/CookieAWTrim.webp" loading="lazy" alt="Cookie Bandel Master Permanent Makeup Technician Austin" /></span></p>
+            <h3 style="text-align: center;"><a href="about.html">Cookie Bandel - Master Permanent Makeup Technician</a></h3>
+            <p style="text-align: center;">Cookie Bandel has been a leader in Austin's permanent makeup scene since 2008. Featured on KVUE Austin and in Austin Woman Magazine, she's known for meticulous artistry and natural results. Specializing in everything from beautiful <a href="landing/eyebrows.html">brows</a> and <a href="landing/lips.html">lips</a> to complex <a href="landing/pmu-correction-removal.html">corrections</a> and compassionate <a href="landing/paramedical.html">areola restoration</a>, clients trust Cookie for her expertise and dedication to safety and satisfaction.</p>
+             <ul class="actions" style="justify-content: center;">
+                <li><a href="about.html" class="button alt">Learn More About Cookie</a></li>
+            </ul>
+        </div>
+    </section>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-        <script src="assets/js/social-proof-slider.js"></script>
+    <!-- Section Two: Why Choose Us? - Enhanced with Links -->
+    <section id="two">
+        <div class="inner">
+             <header class="major special">
+                <h2>Why Choose Permanent Makeup from Studio Bella?</h2>
+             </header>
+        </div>
+        <div class="inner">
+            <article>
+                <div class="content">
+                    <header>
+                        <h3><i class="fa fa-clock-o" aria-hidden="true"></i> Save Time Daily</h3>
+                    </header>
+                    <p>Simplify your morning routine. Enjoy smudge-proof, waterproof makeup perfect for swimming, workouts, or busy schedules. Wake up ready to go!</p>
+                </div>
+                 <div class="content">
+                    <header>
+                        <h3><i class="fa fa-check-circle" aria-hidden="true"></i> Safety & Expertise</h3>
+                    </header>
+                    <p>Your safety is paramount. We adhere to the strictest hygiene standards. <a href="about.html">Cookie's</a> extensive experience ensures precise, beautiful results. Learn more about our <a href="faq.html">safety protocols</a>.</p>
+                </div>
+                 <div class="content">
+                    <header>
+                        <h3><i class="fa fa-heart" aria-hidden="true"></i> Paramedical Options</h3>
+                    </header>
+                    <p>We offer restorative <a href="landing/paramedical.html">paramedical tattooing</a>, including <a href="landing/paramedical.html">areola repigmentation</a> (free for cancer survivors) and <a href="landing/paramedical.html">scar camouflage</a>.</p>
+                </div>
+            </article>
+            <article class="alt">
+                 <div class="content">
+                    <header>
+                        <h3><i class="fa fa-paint-brush" aria-hidden="true"></i> Customization</h3>
+                    </header>
+                    <p>Your look is unique. Cookie collaborates with you during your <a href="consultation.html">free consultation</a> to design a shape and color perfectly suited to your features and desires.</p>
+                </div>
+                <div class="content">
+                    <header>
+                        <h3><i class="fa fa-calendar-check-o" aria-hidden="true"></i> Long-Lasting Results</h3>
+                    </header>
+                    <p>Permanent makeup typically lasts 1-3+ years, varying by procedure and individual factors. Periodic <a href="services.html#touch-ups">touch-ups</a> keep your look fresh. Read our <a href="blogs/permanent-makeup-longevity-guide.html">longevity guide</a>.</p>
+                </div>
+                 <div class="content">
+                    <header>
+                        <h3><i class="fa fa-info-circle" aria-hidden="true"></i> Ideal for Many</h3>
+                    </header>
+                    <p>Beneficial for those with allergies to traditional makeup, vision impairments, motor skill challenges (arthritis, Parkinson's), or anyone seeking convenience and enhanced features. Explore our <a href="faq.html">FAQ</a>.</p>
+                </div>
+            </article>
+        </div>
+    </section>
 
-	</body>
+    <!-- Before and After Section - Updated Paths and Gallery Structure -->
+    <section id="gallery-preview" style="padding: 3em 0;">
+        <div class="inner">
+            <header class="major special">
+                <h2>See the Transformations</h2>
+            </header>
+            <!-- Updated Gallery Section -->
+            <div class="box alt gallery-box"> <!-- Added gallery-box class -->
+                <div class="image-gallery"> <!-- Use the image-gallery container -->
+                    <!-- Use WEBP images with lazy loading -->
+                    <div class="gallery-item"><span class="image fit"><img src="assets/images/beforeAfter/baEyebrow1.webp" loading="lazy" alt="Microblading Eyebrows Before After Austin"></span></div>
+                    <div class="gallery-item"><span class="image fit"><img src="assets/images/beforeAfter/baEyeliner1.webp" loading="lazy" alt="Permanent Eyeliner Before After Austin"></span></div>
+                    <div class="gallery-item"><span class="image fit"><img src="assets/images/beforeAfter/baLips1.webp" loading="lazy" alt="Lip Blushing Before After Austin"></span></div>
+                    <div class="gallery-item"><span class="image fit"><img src="assets/images/beforeAfter/baEyebrow7.webp" loading="lazy" alt="Powder Brows Before After Austin"></span></div>
+                    <div class="gallery-item"><span class="image fit"><img src="assets/images/beforeAfter/baEyeliner3.webp" loading="lazy" alt="Lash Enhancement Before After Austin"></span></div>
+                    <div class="gallery-item"><span class="image fit"><img src="assets/images/beforeAfter/baEyebrow4.webp" loading="lazy" alt="Natural Permanent Eyebrows Before After Austin"></span></div>
+                 </div>
+             </div>
+             <!-- End Updated Gallery Section -->
+            <ul class="actions" style="justify-content: center;">
+                <li><a href="beforeAfterGallery.html" class="button alt">View Full Before & After Gallery</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Video Section - Updated Path -->
+    <section id="video-section" style="padding: 2em 0 4em 0; background-color: #f8f8f8;">
+        <div class="inner">
+            <header class="major special">
+                <h2>Meet Studio Bella</h2>
+            </header>
+            <div style="max-width: 800px; margin: 0 auto; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 6px; overflow: hidden;">
+              <video controls playsinline style="width:100%; display:block; background-color: #000;">
+                <!-- Corrected Video Path -->
+                <source src="video/STUDIOBELLAMAKEUP 0920 R2.mp4" type="video/mp4">
+                Your browser does not support the video tag. Please <a href="contact.html">contact us</a> for more information.
+              </video>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="final-cta" style="padding: 4em 0;">
+         <div class="inner text-center">
+              <header class="major special">
+                 <h2>Ready to Simplify Your Beauty Routine?</h2>
+              </header>
+              <p>Discover the confidence and convenience of expertly applied permanent makeup. Schedule your free, no-obligation consultation with Cookie Bandel today!</p>
+               <ul class="actions" style="justify-content: center;">
+                    <li><a href="consultation.html" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
+                    <li><a href="contact.html" class="button alt icon fa-envelope">Ask a Question</a></li>
+                </ul>
+         </div>
+    </section>
+
+    <!-- Import Footer - Corrected Path -->
+    <script language="javascript" type="text/javascript" src="assets/js/footer.js"></script>
+
+    <!-- Scripts - Corrected Paths -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Social Proof Slider Script needed for the included section -->
+    <script src="assets/js/social-proof-slider.js"></script>
+
+</body>
 </html>

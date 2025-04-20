@@ -1,252 +1,363 @@
 <!DOCTYPE HTML>
-
 <html>
-	<head>
-		
+<head>
+    <title>Permanent Makeup Services & Pricing | Studio Bella Austin</title>
+    <meta name="description" content="Explore Studio Bella's permanent makeup services in Austin: expert eyebrows (microblading, powder), eyeliner, lip blush, paramedical tattooing, corrections, and more. View pricing."/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" /> <!-- Include Font Awesome -->
+    <link rel="icon" href="assets/images/eyebrowBrowserTabIcon.jpg"> <!-- Corrected Favicon Path -->
 
-		<title>Services</title>
-		<meta name ="description" content="Services Offered by Studio Bella include Eyeliner, Eybrows, Highlighting, Blush, Lips, and much more."/>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/eyebrowBrowserTabIcon.jpg">
+    
 
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PNKPQBX');</script>
-		<!-- End Google Tag Manager -->
-		
-	<script src="assets/js/globalHead.js"></script>
+    <script src="assets/js/globalHead.js"></script>
+
+    <style>
+        /* --- Services Grid Styles --- */
+        .services-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em; /* Space between cards */
+            margin-top: 2em;
+        }
+
+        .service-card {
+            flex: 1 1 calc(33.333% - 1.34em); /* Adjust basis for 3 columns, accounting for gap */
+            min-width: 280px; /* Minimum width before wrapping */
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* Clip image corners */
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .service-card:hover {
+             transform: translateY(-5px);
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card .card-image-wrapper {
+            width: 100%;
+            height: 200px; /* Fixed height for images */
+            overflow: hidden;
+        }
+
+        .service-card img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the area, maintain aspect ratio */
+            border-bottom: 1px solid #eee;
+        }
+
+        .service-card .card-content {
+            padding: 1.5em;
+            flex-grow: 1; /* Allow content to fill space */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card h3 {
+            font-size: 1.3em;
+            color: #4a3f4f; /* Dark Plum */
+            margin-top: 0;
+            margin-bottom: 0.75em;
+        }
+
+        .service-card p {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+            flex-grow: 1; /* Push price to bottom */
+            margin-bottom: 1em;
+        }
+         .service-card p a { /* Style links within descriptions */
+             font-weight: 600; /* Make links slightly bolder */
+             /* color: #4a3f4f; Use default link color or override */
+         }
+
+        .service-card .price {
+            font-size: 1.1em;
+            font-weight: bold;
+            color: #c88ea5; /* Dusty Rose for price */
+            margin-top: auto; /* Push to bottom */
+            text-align: right;
+        }
+        .service-card .price span { /* Style for addons/notes */
+            display: block;
+            font-size: 0.8em;
+            font-weight: normal;
+            color: #777;
+        }
+
+        /* Responsive Adjustments */
+        @media screen and (max-width: 980px) {
+            .service-card {
+                flex-basis: calc(50% - 1em); /* 2 columns */
+            }
+             .services-grid {
+                 gap: 1.5em;
+             }
+        }
+
+        @media screen and (max-width: 736px) {
+            .service-card {
+                flex-basis: 100%; /* 1 column */
+            }
+             .services-grid {
+                 gap: 1.5em;
+             }
+             .service-card .card-image-wrapper {
+                 height: 220px; /* Adjust height */
+             }
+        }
+
+        /* Call to Action Section */
+        .cta-section {
+            text-align: center;
+            margin-top: 4em;
+            padding: 2.5em;
+            background-color: #f8f8f8;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+        .cta-section h2 {
+            margin-top: 0;
+            margin-bottom: 0.75em;
+        }
+
+    </style>
+
 </head>
-	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNKPQBX"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
+<body>
+    
+
+    <!-- Import NavMenu -->
+    <script language="javascript" type="text/javascript" src="assets/js/navMenu.js"></script>
+
+    <section id="main">
+        <div class="inner">
+            <header class="major special">
+                <h1>Permanent Makeup Services</h1>
+                <p>Enhance your natural beauty with expertly applied permanent cosmetics by Master Technician Cookie Bandel.</p>
+            </header>
+
+            <div class="services-grid">
+
+                <!-- Eyeliner Card -->
+                <article class="service-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/eyeliner1.webp" alt="Permanent Eyeliner Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/eyeliner.html">Eyeliner</a></h3>
+                        <p>Standard liner is +/- 1mm thick for subtle definition. You approve the design throughout. Add a wing for a bolder look. See our <a href="blogs/permanent-eyeliner-austin-guide.html">Eyeliner Guide</a>.</p>
+                        <div class="price">$650 <span>Add Wing: +$150</span></div>
+                    </div>
+                </article>
+
+                <!-- Eyelash Enhancement Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/eyeliner2.webp" alt="Eyelash Enhancement Permanent Makeup Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/eyeliner.html">Eyelash Enhancement</a></h3>
+                        <p>Pigment is delicately placed *within* the lash line, making lashes look fuller and darker naturally, without the appearance of distinct eyeliner. Perfect for a subtle boost.</p>
+                         <div class="price">$650</div>
+                    </div>
+                </article>
+
+                <!-- Lips Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/lips1.webp" alt="Permanent Lip Blush Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/lips.html">Lips (Liner or Blush)</a></h3>
+                        <p>Define your lip shape with liner or add a natural wash of color with Lip Blushing. Helps create symmetry and fullness. Learn about <a href="blogs/lip-blush-austin-guide.html">Lip Blushing</a> and <a href="blogs/lip-blush-aftercare-austin.html">aftercare</a>.</p>
+                         <div class="price">$650</div>
+                    </div>
+                </article>
+
+                <!-- Eyebrows Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/eyebrow1.webp" alt="Permanent Eyebrows Microblading Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                         <h3><a href="landing/eyebrows.html">Eyebrows</a></h3>
+                         <p>Achieve your perfect brow shape with techniques like microblading (hair strokes), powder/ombre shading, or a combination. We use multiple shades for dimension. Explore <a href="blogs/microblading-vs-powder-brows-austin.html">Microblading vs Powder Brows</a>.</p>
+                         <div class="price">$650</div>
+                    </div>
+                </article>
+
+                <!-- Corrections Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/faceGeneric4.webp" alt="Permanent Makeup Correction Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/pmu-correction-removal.html">Corrections / Removal</a></h3>
+                        <p>Unhappy with previous PMU? We specialize in correcting color, shape, and asymmetry, or safely lightening/removing unwanted pigment using saline removal techniques. See our <a href="blogs/fixing-bad-permanent-makeup-austin.html">guide on fixing bad PMU</a>.</p>
+                        <div class="price">$150/hour <span>1 Hour Minimum</span></div>
+                    </div>
+                </article>
+
+                <!-- Areola Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/faceGeneric3.webp" alt="Areola Repigmentation Austin" loading="lazy"> <!-- Placeholder Image -->
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/paramedical.html">Areola Repigmentation</a></h3>
+                        <p>Creating realistic 3D areolas post-mastectomy or for cosmetic enhancement using multiple colors for shading and natural dimension. Ask your Doctor about scheduling.</p>
+                        <div class="price">$400 <span>Free for Breast Cancer Survivors</span></div>
+                    </div>
+                </article>
+
+                <!-- Scar Camouflage Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/scarCamo1.webp" alt="Scar Camouflage Tattoo Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/paramedical.html">Scar Camouflage</a></h3>
+                        <p>Minimize the appearance of surgical or injury scars by custom blending pigment to match your skin tone. Can also help diminish keloids. Learn more about <a href="blogs/scar-camouflage-austin.html">scar camouflage</a>.</p>
+                         <div class="price">$150/hour <span>1 Hour Minimum</span></div>
+                    </div>
+                </article>
+
+                <!-- Blush Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/faceGeneric1.webp" alt="Permanent Blush Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/facial-shading.html">Blush</a></h3>
+                        <p>Achieve a delicate, natural-looking flush, like you've just been kissed by the sun, without daily makeup application.</p>
+                         <div class="price">$450</div>
+                    </div>
+                </article>
+
+                <!-- Eyebrow Highlighter Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/beforeAfter/baEyebrow7.webp" alt="Eyebrow Highlighter Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                         <h3><a href="landing/facial-shading.html">Eyebrow Highlighter</a></h3>
+                         <p>A soft highlight applied just below the eyebrow on the brow bone creates a subtle lift and brightens the eyes without surgery.</p>
+                         <div class="price">$450</div>
+                    </div>
+                </article>
+
+                 <!-- Eye Shadow Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/eyeliner1.webp" alt="Permanent Eye Shadow Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/facial-shading.html">Eye Shadow</a></h3>
+                        <p>Enjoy a soft, powder-like eye shadow effect that won't crease or need reapplication. Many shades available or custom-created.</p>
+                         <div class="price">$400+ <span>Depending on Design</span></div>
+                    </div>
+                </article>
+
+                 <!-- Under Eye Concealer Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/faceGeneric2.webp" alt="Permanent Under Eye Concealer Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3><a href="landing/facial-shading.html">Under Eye Concealer</a></h3>
+                        <p>Camouflage dark circles permanently for a rested, fresh look without the worry of makeup caking or creasing.</p>
+                         <div class="price">$650</div>
+                    </div>
+                </article>
+
+                 <!-- Beauty Marks Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/faceGeneric4.webp" alt="Permanent Beauty Marks Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Beauty Marks / Freckles</h3>
+                        <p>Add a classic beauty mark or a dusting of natural-looking freckles. Customizable size, shape, and color.</p>
+                        <div class="price">$50+ <span>Per mark or group of 5 freckles</span></div>
+                    </div>
+                </article>
+
+                <!-- Bindi Card -->
+               <!--  <article class="service-card">
+                    <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/faceGeneric1.webp" alt="Permanent Bindi Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Bindi</h3>
+                        <p>Permanent application of a Bindi in your choice of size and color.</p>
+                         <div class="price">$50</div>
+                    </div>
+                </article> -->
+
+                 <!-- White Eyeliner Card -->
+                <!-- <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/eyeliner1.webp" alt="White Permanent Eyeliner Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>White Eyeliner</h3>
+                        <p>Applied perfectly above traditional eyeliner or alone, this adds a brightening effect to make eyes pop. Also available in other colors.</p>
+                        <div class="price">$450</div>
+                    </div>
+                </article>-->
+
+                 <!-- And Much More Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/horizontalMultipleWomenGenericFaces.webp" alt="More Permanent Makeup Services Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>And More!</h3>
+                        <p>This includes common services, but isn't exhaustive. If you don't see what you're looking for, please <a href="contact.html">contact us</a>! We likely offer it.</p>
+                        <div class="price"><a href="contact.html" class="button small alt">Inquire</a></div>
+                    </div>
+                </article>
 
 
-		<!-- Import NavMenu -->
-		<script language="javascript" type="text/javascript" src="assets/js/navMenu.js"></script>
+            </div> <!-- /.services-grid -->
 
-		<section id = "main">
-			<div class = "inner">
-				<header class="major special">
-					<h1>Permanent Makeup Services</h1>
-				</header>
-			</div>
-		</section>
+            <!-- Call to Action Section -->
+            <section class="cta-section">
+                <h2>Ready to Simplify Your Routine?</h2>
+                <p>Find out which permanent makeup service is perfect for you. Consultations with Cookie are always free and informative.</p>
+                <ul class="actions" style="justify-content: center; margin-bottom: 0;">
+					<li><a href="consultation.html" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
+					<li><a href="faq.html" class="button alt icon fa-question-circle">Read Our FAQ</a></li>
+				</ul>
+            </section>
 
-		<section id="three" >
-			<div class="inner">
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> --> 
-						<header>
-							<h3>Eyeliner</h3>
-						</header>
-						<p>This is usually +/- 1 mm in thickness and you can can rest assured it will be what you asked for. You are a part of the whole procedure, literally. You can have a mirror in your hand the whole time. No surprises!</p>
-						<p style = "color:#800080; font-weight: bold;">$650<br>Add-On: Over 1mm with wing: +$150</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Eyelash Enhancement</h3>
-						</header>
-						<p>This is what I like to do especially if you are at all apprehensive. This is really a cool procedure. I lay the pigment 'IN' the lash line. This makes your eyelashes look fuller than they actually are. It is also wonderful because your eyes always look nicely and naturally made up. On special occasions you can apply store bought eyeliner for a more dramatic appearance and still maintain a natural look on all other days.</p>
-						<p style = "color:#800080; font-weight: bold;">$650</p>
-				</article>
+        </div> <!-- /.inner -->
+    </section> <!-- /#main -->
 
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-							<header>
-								<h3>Lips</h3>
-							</header>
-							<p>Some people just want lip liner to accentuate the shape of their lips and somewhat full lip blushing, and some want both. And yes, when lips are fully healed you can apply lipstick if you happen to want a color change for the day! </p>
-							<p style = "color:#800080; font-weight: bold;">$650</p>
-					</div>
-				</article>
-			</div>
-		</section>
+    <!-- Import Footer -->
+    <script language="javascript" type="text/javascript" src="assets/js/footer.js"></script>
 
-		<section id="three" >
-			<div class="inner">
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>White Eyeliner</h3>
-						</header>
-						<p>Applied perfectly above eyeliner. This is a real nice effect and really makes your eyes light up. Also available in a variety of different colors and shades.</p>
-						<p style = "color:#800080; font-weight: bold;">$450</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Eyebrow Highlighter</h3>
-						</header>
-						<p>Ever so softly on the brow bone just below the eyebrow. A very inexpensive and virtually pain free procedure. Eyebrow highlighter adds a lift to your face without surgery.</p>
-						<p style = "color:#800080; font-weight: bold;">$450</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Blush</h3>
-						</header>
-						<p>Delicately applied for a look like you've just been kissed by the sun.</p>
-						<p style = "color:#800080; font-weight: bold;">$450</p>
-					</div>
-				</article>
-				</div>
-		</section>
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/skel.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
 
-		<section id="three" >
-			<div class="inner">
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Eye Shadow</h3>
-						</header>
-						<p>Having permanent eye shadow is just so thrilling. No creases, and no reapplications. Soft powder like effect and many shades to choose from or create.</p>
-						<p style = "color:#800080; font-weight: bold;">$400+ depending on design</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Under Eye Concealer</h3>
-						</header>
-						<p>Tired of it caking up? Well this is truly the best. Always look rested and fresh with no more dark circles under your eyes. This amazes everyone.</p>
-						<p style = "color:#800080; font-weight: bold;">$650</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Areola</h3>
-						</header>
-						<p>Ask your Doctor when you can have your areola procedure scheduled. We use several colors for shading and dimension for a natural look.</p>
-						<p style = "color:#800080; font-weight: bold;">$400<br>Breast Cancer Survivors Free.</p>
-					</div>
-				</article>
-			</div>
-		</section>
+    <!-- Add any page-specific JS here if needed -->
+    <script>
+        // Example: Add JS for interactions specific to this page if required
+        // $(document).ready(function() {
+        //     console.log("Services page ready!");
+        // });
+    </script>
 
-		<section id="three" >
-			<div class="inner">
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Scar Camouflage</h3>
-						</header>
-						<p>Is very popular especially on that childhood scar in your eyebrow where hair won't grow. Or the scar that is too white for your skin tone or vise versa. You will literally forget where the scar was.  The insertion of the needle also helps to diminish keloids if there are any present.</p>
-						<p style = "color:#800080; font-weight: bold;">$150/hour. 1 Hour minimum.</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Beauty Marks</h3>
-						</header>
-						<p>Yes, anywhere, any shape, any color, any size</p>
-						<p style = "color:#800080; font-weight: bold;">$50 for one beauty mark or five freckles</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Bindi</h3>
-						</header>
-						<p>I have applied Bindis in many different sizes and colors.</p>
-						<p style = "color:#800080; font-weight: bold;">$50</p>
-					</div>
-				</article>
-			</div>
-		</section>
-
-		<section id="three" >
-			<div class="inner">
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-
-						<header>
-							<h3>Eyebrows</h3>
-						</header>
-						<p>Can be filled in like a soft powder effect, hair strokes or both. We use two or three different shades to give your eyebrows dimension for those of us who have very few or no hair at all. These too are available in a variety of different colors and shades.</p>
-						<p style = "color:#800080; font-weight: bold;">$650</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>Corrections</h3>
-						</header>
-						<p>I truly feel for people who have had a procedure gone wrong. Yes, I can fix most any cosmetic procedure that was done to you incorrectly. All of my clients were done with the gentlest of care. I am NEVER rushed, and I ALWAYS schedule more than enough time for your procedure. I believe that is why I have NEVER had a client who was not completely happy with my work.</p>
-						<p style = "color:#800080; font-weight: bold;">$150/hour. 1 Hour minimum.</p>
-					</div>
-				</article>
-				<article>
-					<div class="content">
-						<!-- <span class="icon fa-eye"></span> -->
-						<header>
-							<h3>And Much More!</h3>
-						</header>
-						<p>This list of services includes the most common services but is not all-inclusive, if you don't see a specific services, please give us a call and we will be happy to help you find what you're looking for.
-					</div>
-				</article>
-			</div>
-		</section>
-
-	<!-- 	<section id = "main">
-			<div class = "inner">
-				<header class="major special">
-					<h1>Additional Services</h1>
-				</header>
-			</div>
-		</section>
-
-		<section id="three" >
-			<div class="inner">
-				<article>
-					<div class="content">
-						<header>
-							<h3>DaVinci Teeth Whitening</h3>
-						</header>
-						<p>Organic DaVinci Teeth Whitening Gel technology combined with UV lights bring out your brightest smile.</p>
-						<p style = "color:#800080; font-weight: bold;">$199 for 3 sessions</p>
-					</div>
-				</article>
-	
-			</div>
-		</section> -->
-
-
-
-	<!-- Import Footer -->
-		<script language="javascript" type="text/javascript" src="assets/js/footer.js"></script>
-
-	<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/skel.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
-
-	</body>
+</body>
 </html>

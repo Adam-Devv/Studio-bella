@@ -1,98 +1,208 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Book Your Free Consultation | Studio Bella Permanent Makeup Austin</title>
-		<meta name ="description" content="Schedule your free, no-obligation consultation with Studio Bella in Austin. Discuss your permanent makeup goals with Master Technician Cookie Bandel."/>
+		<title>Free Permanent Makeup Consultation | Studio Bella Austin</title>
+		<meta name ="description" content="Book your FREE, no-obligation consultation for permanent makeup in Austin! Discuss eyebrows, eyeliner, lips & more with Master Technician Cookie Bandel at Studio Bella."/>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- Corrected CSS paths -->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/eyebrowBrowserTabIcon.jpg">
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" /> <!-- Needed for icons -->
+		<!-- Corrected Favicon path -->
+		<link rel="icon" href="assets/images/eyebrowBrowserTabIcon.jpg">
 
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PNKPQBX');</script>
-		<!-- End Google Tag Manager -->
+		
 
+		<!-- Corrected globalHead path -->
 		<script src="assets/js/globalHead.js"></script>
-	</head>
-	<body class="is-preload"> <!-- Added is-preload if desired for loading animation -->
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNKPQBX"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
 
-		<!-- Import NavMenu -->
+		<!-- START: Inline CSS Override for Consultation Layout -->
+		<style>
+			/* Target the specific first row directly under .inner inside #main */
+			#main > .inner > .row:first-of-type {
+				margin-left: -1em !important; /* Counteract default negative margin if needed */
+   				margin-right: -1em !important;
+			}
+
+			/* Apply styles only on screens wider than the medium breakpoint */
+			@media screen and (min-width: 981px) {
+				#main > .inner > .row:first-of-type {
+					display: flex !important; /* Force flex display */
+					flex-wrap: nowrap !important; /* Prevent wrapping */
+					align-items: flex-start !important; /* Align items to the top */
+					width: calc(100% + 2em); /* Adjust width to account for padding compensation */
+				}
+
+				/* Target the columns within that specific row */
+				#main > .inner > .row:first-of-type > .6u,
+				#main > .inner > .row:first-of-type > .6u\$ {
+					width: 50% !important; /* Force 50% width */
+					padding: 0 1em !important; /* Apply consistent horizontal padding (adjust value if needed) */
+					margin-left: 0 !important; /* Reset any weird margins */
+					float: none !important; /* Override potential floats */
+					box-sizing: border-box !important; /* Ensure padding is included in width */
+				}
+
+				/* Ensure the form container doesn't push things down */
+				#consultation-form-container {
+					margin-top: 0 !important;
+				}
+			}
+
+			/* Stacking for medium and smaller screens (should be handled by 12u$(medium) but reinforce) */
+			@media screen and (max-width: 980px) {
+				#main > .inner > .row:first-of-type > .6u,
+				#main > .inner > .row:first-of-type > .6u\$ {
+					width: 100% !important; /* Ensure full width */
+					padding-left: 1em !important; /* Maintain some padding */
+					padding-right: 1em !important;
+					margin-bottom: 2em !important; /* Add space when stacked */
+				}
+				#main > .inner > .row:first-of-type > .6u\$:last-child {
+					margin-bottom: 0 !important; /* Remove margin from last item */
+				}
+				#main > .inner > .row:first-of-type {
+					margin-left: -1em !important; /* Reset negative margin for stacking */
+   					margin-right: -1em !important;
+					width: calc(100% + 2em);
+				}
+			}
+		</style>
+		<!-- END: Inline CSS Override -->
+
+	</head>
+	<body class="is-preload">
+		
+
+		<!-- Import NavMenu (Correct path) -->
 		<script language="javascript" type="text/javascript" src="assets/js/navMenu.js"></script>
 
 		<!-- Main -->
-		<section id="main" style="padding-top: 3em;"> <!-- Adjusted padding top slightly -->
+		<section id="main" style="padding-top: 3em;">
 			<div class="inner">
 
-				<!-- Top Section: Form + Intro -->
-				<div class="row">
-					<div class="6u 12u$(medium)">
-						<header class="major">
-							<h2>Book Your Free Consultation</h2>
-						</header>
-						<p>Ready to explore the possibilities of permanent makeup? Schedule your complimentary, no-obligation consultation today. Fill out the quick form below, and we'll be in touch to confirm your appointment!</p>
+				<!-- Header and Intro Text ABOVE the two-column row -->
+				<header class="major special">
+					<h1>Book Your Free Consultation</h1>
+					<p>Ready to explore the possibilities of effortless beauty with permanent makeup?</p>
+				</header>
+				<p style="text-align:center; margin-bottom: 2em;">Schedule your complimentary, no-obligation consultation with Master Technician <a href="about.html">Cookie Bandel</a>. Discuss your goals, get personalized advice, and see how we can enhance your natural features. Fill out the quick form below!</p>
 
+				<!-- Top Section: Form + Image/Benefits Side-by-Side -->
+				<!-- Using the standard row class, relying on CSS override -->
+				<div class="row">
+					<!-- Left Column: Form -->
+					<div class="6u 12u$(medium)">
 						<!-- Container for the dynamically loaded form -->
 						<div class="landing-form-section" id="consultation-form-container"
 							 data-subject="Consultation Booking Request (Main Site)"
-							 data-service="General Consultation Inquiry">
+							 data-service="General Consultation Inquiry"
+                             style="padding: 1.5em;">
+                            <h3 style="margin-top:0; margin-bottom: 1em; text-align: center;">Request Your Appointment</h3>
 							<!-- The consultation-form.html content will be loaded here by load-form.js -->
-							<p style="text-align: center; padding: 2em 0;">Loading booking form...</p> <!-- Loading message -->
+							<p style="text-align: center; padding: 1em 0;">Loading booking form...</p>
 						</div>
 					</div>
+
+					<!-- Right Column: Image + Benefits List -->
 					<div class="6u$ 12u$(medium)">
-						<span class="image fit" style="margin-top: 3.5em;"><img src="images/CookieAWTrim.webp" alt="Cookie Bandel at Studio Bella Austin" loading="lazy"></span>
+                        <span class="image fit">
+                            <img src="assets/images/CookieAWTrim.webp" alt="Cookie Bandel at Studio Bella Austin - Permanent Makeup Consultation" loading="lazy">
+                        </span>
                         <h3 style="margin-top: 1.5em;">Why Book a Consultation?</h3>
 						<ul style="list-style: none; padding-left: 0;">
-                            <li><i class="fa fa-comments" style="color: #c88ea5; margin-right: 8px;"></i> Get personalized advice tailored to you.</li>
-                            <li><i class="fa fa-eye" style="color: #c88ea5; margin-right: 8px;"></i> See before/after photos and discuss desired results.</li>
-                            <li><i class="fa fa-question-circle" style="color: #c88ea5; margin-right: 8px;"></i> Ask all your questions in a relaxed setting.</li>
-                            <li><i class="fa fa-paint-brush" style="color: #c88ea5; margin-right: 8px;"></i> Discuss color, shape, and technique options.</li>
-                            <li><i class="fa fa-check-circle" style="color: #c88ea5; margin-right: 8px;"></i> Understand the procedure and aftercare.</li>
-                            <li><i class="fa fa-thumbs-up" style="color: #c88ea5; margin-right: 8px;"></i> Absolutely free with no obligation to book.</li>
+                            <li><i class="fa fa-comments" style="color: #c88ea5; margin-right: 8px;"></i> Get personalized advice tailored to your unique features & goals.</li>
+                            <li><i class="fa fa-eye" style="color: #c88ea5; margin-right: 8px;"></i> See <a href="beforeAfterGallery.html">before/after photos</a> and discuss your desired look.</li>
+                            <li><i class="fa fa-question-circle" style="color: #c88ea5; margin-right: 8px;"></i> Ask all your questions about the process, safety, and aftercare (<a href="faq.html">see FAQ</a>).</li>
+                            <li><i class="fa fa-paint-brush" style="color: #c88ea5; margin-right: 8px;"></i> Discuss color, shape, and technique options (e.g., microblading vs. powder brows).</li>
+                             <li><i class="fa fa-female" style="color: #c88ea5; margin-right: 8px;"></i> Meet Cookie and feel comfortable before committing.</li>
+                            <li><i class="fa fa-check-circle" style="color: #c88ea5; margin-right: 8px;"></i> Understand the procedure and what to expect during healing.</li>
+                            <li><i class="fa fa-thumbs-up" style="color: #c88ea5; margin-right: 8px;"></i> Absolutely free with no obligation to book a service.</li>
                         </ul>
 					</div>
 				</div>
+				<!-- End Top Section -->
 
+                <!-- Social Proof Section Integration -->
+                <hr style="margin: 3em 0;">
+                <!-- Placeholder for Social Proof Section -->
+                <div id="social-proof-placeholder"></div>
+                <script>
+                  fetch('_includes/social-proof.html') // Path from root is correct here
+                    .then(response => {
+                        if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
+                        return response.text();
+                    })
+                    .then(html => {
+                      const placeholder = document.getElementById('social-proof-placeholder');
+                      if (placeholder) {
+                          placeholder.innerHTML = html;
+                          // Call the initialization function after HTML is loaded
+                          if (typeof initSocialProofSlider === 'function') {
+                              initSocialProofSlider(placeholder);
+                          } else {
+                              console.error('initSocialProofSlider function not found. Is social-proof-slider.js loaded?');
+                          }
+                      } else {
+                          console.error('Social proof placeholder element not found.');
+                      }
+                    })
+                    .catch(error => console.error('Error loading or processing social proof section:', error));
+                </script>
+                <!-- End Social Proof Section -->
                 <hr style="margin: 3em 0;">
 
 				<!-- Detailed Content Section -->
 				<article>
 					<header class="major special">
 						<h2>What to Expect During Your Consultation</h2>
+						<p>Your free consultation at Studio Bella is designed to be informative and comfortable, typically lasting 15-30 minutes.</p>
 					</header>
-					<p>Your free consultation at Studio Bella is designed to be informative and comfortable. Master Technician Cookie Bandel will dedicate approximately 15-30 minutes to personally discuss your permanent makeup goals.</p>
-                    <p>Here's what typically happens:</p>
-                    <ul>
-                        <li><strong>Discussion:</strong> We'll talk about the specific areas you're interested in (eyebrows, eyeliner, lips, paramedical, etc.) and the look you hope to achieve. Feel free to bring inspiration photos!</li>
-                        <li><strong>Education:</strong> Cookie will explain the different techniques available (like microblading vs. powder brows, lip blush vs. liner), the process itself, and what realistic results look like.</li>
-                        <li><strong>Portfolio Review:</strong> You'll have the opportunity to look through extensive photo albums of Cookie's actual client work, helping you visualize the possibilities.</li>
-                        <li><strong>Q&A:</strong> This is your time to ask any questions you have about the procedure, healing, longevity, safety, or anything else on your mind.</li>
-                        <li><strong>Assessment (Optional):</strong> For some procedures, Cookie might assess your skin type or the area to be treated to recommend the best approach. We can also discuss color matching.</li>
-                        <li><strong>Pre-Drawing (Optional):</strong> For services like eyebrows or lips, we can optionally do a temporary pre-draw with makeup to give you an idea of the proposed shape before you commit to a procedure appointment.</li>
-                    </ul>
-					<p>Consultations can be held either **in person** at our Austin studio or **virtually via Zoom** for your convenience. Our goal is to ensure you feel fully informed and confident before moving forward with any permanent makeup service.</p>
-                    <p class="text-center" style="margin-top: 2em;"><strong>Ready to chat? Fill out the form above or <a href="contact.html">contact us directly</a>!</strong></p>
+
+                    <div class="row">
+                        <div class="6u 12u$(medium)">
+                            <h4><i class="fa fa-comments-o" aria-hidden="true" style="color: #c88ea5;"></i> Discussion & Goal Setting</h4>
+                            <p>We'll chat about the specific services you're interested in (<a href="landing/eyebrows.html">eyebrows</a>, <a href="landing/eyeliner.html">eyeliner</a>, <a href="landing/lips.html">lips</a>, <a href="landing/paramedical.html">paramedical</a>, etc.) and the aesthetic you hope to achieve. Feel free to bring inspiration photos!</p>
+
+                            <h4><i class="fa fa-graduation-cap" aria-hidden="true" style="color: #c88ea5;"></i> Education & Techniques</h4>
+                            <p>Cookie will explain the different methods available (like <a href="blogs/microblading-vs-powder-brows-austin.html">microblading vs. powder brows</a>, lip blush vs. liner), the procedure steps, healing process, and realistic outcomes.</p>
+
+                             <h4><i class="fa fa-image" aria-hidden="true" style="color: #c88ea5;"></i> Portfolio Review</h4>
+                            <p>You'll have the chance to look through extensive <a href="beforeAfterGallery.html">photo albums</a> of Cookie's actual client results, helping you visualize the possibilities for your own transformation.</p>
+
+                            <h4><i class="fa fa-pencil-square-o" aria-hidden="true" style="color: #c88ea5;"></i> Pre-Drawing (Optional)</h4>
+                             <p>For services like eyebrows or lips, we can optionally perform a temporary pre-draw with conventional makeup. This gives you a preview of the proposed shape before committing to a procedure appointment.</p>
+                        </div>
+                         <div class="6u$ 12u$(medium)">
+                            <h4><i class="fa fa-question" aria-hidden="true" style="color: #c88ea5;"></i> Q&A Session</h4>
+                            <p>This is your dedicated time to ask any questions you have about the procedure, longevity, <a href="blogs/permanent-makeup-safety-austin.html">safety</a>, cost, <a href="blogs/permanent-makeup-pain-comfort-austin.html">comfort</a>, or anything else on your mind.</p>
+
+                             <h4><i class="fa fa-user-md" aria-hidden="true" style="color: #c88ea5;"></i> Assessment (If Applicable)</h4>
+                             <p>For certain procedures, Cookie might assess your skin type or the specific area to be treated to determine the most suitable technique and pigment choice. We can also discuss color matching.</p>
+
+                             <h4><i class="fa fa-video-camera" aria-hidden="true" style="color: #c88ea5;"></i> In-Person or Virtual</h4>
+                             <p>Consultations can be conveniently held either **in person** at our beautiful Austin studio or **virtually via Zoom**, whichever suits you best.</p>
+
+                             <h4><i class="fa fa-thumbs-o-up" aria-hidden="true" style="color: #c88ea5;"></i> No Pressure</h4>
+                             <p>Our goal is purely informational. We want you to feel fully confident and comfortable before deciding to proceed with any <a href="services.html">service</a>. There's absolutely no obligation.</p>
+                        </div>
+                    </div>
+
+					<p class="text-center" style="margin-top: 3em;"><strong>Ready to chat? Fill out the form above or <a href="contact.html">contact us directly</a>!</strong></p>
 				</article>
 
 			</div>
 		</section>
 
-		<!-- Import Footer -->
+		<!-- Import Footer (Correct path) -->
 		<script language="javascript" type="text/javascript" src="assets/js/footer.js"></script>
 
-		<!-- Scripts -->
+		<!-- Scripts (Correct paths) -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/skel.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-        <script src="assets/js/load-form.js"></script> <!-- This loads the form into the container -->
+        <script src="assets/js/load-form.js"></script> <!-- Loads the consultation form -->
+        <script src="assets/js/social-proof-slider.js"></script> <!-- Added for the slider functionality -->
 	</body>
 </html>

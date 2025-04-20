@@ -950,65 +950,72 @@ form .row.uniform > div[class*="u"] {
 
 /* Adjust header position to be below the CTA bar */
 #header {
-    top: 3em; /* Approximate height of the CTA bar - Adjust if padding changes */
+    /* Calculated CTA bar height: 0.6em + 0.6em + (1.4 * 0.95em) = 1.2em + 1.33em = 2.53em */
+    top: 2.53em; /* Position header directly below calculated CTA height */
 }
 
 /* Adjust main content padding to account for BOTH bars */
 body {
-    /* Original header height (4.5em) + CTA bar height (~3em) = ~7.5em */
-    padding-top: 7.5em; /* Increase padding to clear both bars */
+    /* Header height (4.5em) + CTA bar height (2.53em) = 7.03em */
+    padding-top: 7.03em; /* Increase padding to clear both bars */
 }
 
 /* Adjust Nav Panel Toggle position */
 .navPanelToggle {
-     top: 3.25em; /* Position below CTA bar, aligning with new header position */
+     /* Align with header top (2.53em) + existing offset (0.25em) = 2.78em */
+     top: 2.78em;
 }
 
 /* Adjust Nav Panel position */
 #navPanel {
-	top: 3em; /* Start below the CTA bar */
-    height: calc(100% - 3em); /* Adjust height */
+	top: 2.53em; /* Start below the CTA bar */
+    height: calc(100% - 2.53em); /* Adjust height */
 }
 
 
 /* Responsive Adjustments for CTA Bar */
 @media screen and (max-width: 736px) {
+     /* Mobile CTA bar height: 0.7em + 0.7em + (1.4 * 0.9em) = 1.4em + 1.26em = 2.66em */
      #top-cta-bar {
         padding: 0.7em 0.5em;
         font-size: 0.9em;
      }
      #header {
-        top: 2.8em; /* Adjust based on mobile CTA height */
+        top: 2.66em;
      }
       body {
-        /* Mobile header height (4.5em) + mobile CTA height (~2.8em) = ~7.3em */
-        padding-top: 7.3em;
+        /* Mobile header height (4.5em) + mobile CTA height (2.66em) = 7.16em */
+        padding-top: 7.16em;
       }
        .navPanelToggle {
-           top: 3.05em; /* Adjust alignment */
+           /* Align with header top (2.66em) + existing offset (0.25em) = 2.91em */
+           top: 2.91em;
        }
         #navPanel {
-            top: 2.8em;
-             height: calc(100% - 2.8em);
+            top: 2.66em;
+            height: calc(100% - 2.66em);
         }
 }
 @media screen and (max-width: 480px) {
+     /* XSmall CTA bar height: 0.8em + 0.8em + (1.4 * 0.85em) = 1.6em + 1.19em = 2.79em */
      #top-cta-bar {
         padding: 0.8em 0.5em;
         font-size: 0.85em;
      }
       #header {
-        top: 3em; /* Adjust based on xsmall CTA height */
+        top: 2.79em;
       }
        body {
-        padding-top: 7.5em; /* Re-adjust */
+        /* XSmall header height (4.5em) + xsmall CTA height (2.79em) = 7.29em */
+        padding-top: 7.29em;
        }
        .navPanelToggle {
-           top: 3.25em; /* Re-adjust alignment */
+           /* Align with header top (2.79em) + existing offset (0.25em) = 3.04em */
+           top: 3.04em;
        }
          #navPanel {
-            top: 3em;
-             height: calc(100% - 3em);
+            top: 2.79em;
+            height: calc(100% - 2.79em);
         }
 }
 
@@ -1327,3 +1334,151 @@ body {
          height: 2.8em;
     }
 }
+
+/* --- FAQ Accordion Styles --- */
+.faq-accordion {
+    margin-top: 2em;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden; /* Ensures children stay within rounded corners */
+}
+
+.faq-item {
+    border-bottom: 1px solid #e0e0e0;
+}
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    appearance: none;
+    border: none;
+    color: #4a3f4f; /* Dark plum text */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.1em; /* Slightly larger question font */
+    font-weight: 600; /* Semi-bold */
+    padding: 1em 1.5em;
+    text-align: left;
+    width: 100%;
+    transition: background-color 0.2s ease-in-out;
+}
+.faq-question span {
+    flex-grow: 1;
+    padding-right: 1em; /* Space between text and icon */
+}
+
+.faq-question:hover,
+.faq-question:focus {
+    outline: none;
+}
+
+.faq-question .faq-icon {
+    flex-shrink: 0;
+    width: 1.5em; /* Ensure icon has space */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    font-size: 1.2em; /* Adjust icon size */
+    color: #c88ea5; /* Accent color for icon */
+}
+
+/* Rotate icon when question is active/expanded */
+.faq-question.active .faq-icon {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    /* Use max-height for transition */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    padding: 0 1.5em; /* Only apply padding when open */
+}
+/* Style the content inside the answer */
+.faq-answer p,
+.faq-answer ul {
+    margin-bottom: 1em;
+    line-height: 1.7;
+    /* color: #555; */ /* Remove this line or change to darker */
+    color: #333333; /* CHANGE: Use darker text color for better contrast */
+}
+.faq-answer ul {
+    margin-left: 1.5em; /* Indent lists */
+    padding-left: 0.5em;
+    list-style: disc;
+}
+.faq-answer ul li {
+    margin-bottom: 0.5em;
+}
+.faq-answer > *:last-child {
+    margin-bottom: 0; /* Remove bottom margin from last element */
+}
+
+/* ADD: Specific style for links within the answer for better contrast */
+.faq-answer a {
+    color: #4a3f4f; /* CHANGE: Use darker plum (heading color) for links inside answers */
+    border-bottom-color: rgba(74, 63, 79, 0.5); /* Match link color */
+}
+.faq-answer a:hover {
+    color: #c88ea5; /* Use accent color on hover */
+    border-bottom-color: rgba(200, 142, 165, 0.5);
+}
+
+
+/* Responsive adjustments for FAQ */
+@media screen and (max-width: 736px) {
+    .faq-question {
+        font-size: 1em;
+        padding: 0.8em 1em;
+    }
+    .faq-answer {
+        padding: 0 1em;
+    }
+     .faq-answer.open {
+        padding: 1.2em 1em;
+    }
+    .faq-question .faq-icon {
+        font-size: 1.1em;
+    }
+}
+/* --- Consultation Page Layout Fix --- */
+#main .row.items-start {
+    align-items: flex-start; /* Align items to the top */
+    display: flex !important; /* Ensure flex display overrides any potential conflicts */
+    flex-wrap: wrap !important; /* Ensure wrapping */
+}
+
+#main .row > .column-container {
+    display: block !important; /* Ensure columns behave as blocks within the flex row */
+    padding-top: 0 !important; /* Remove potential extra top padding */
+    margin-bottom: 0 !important; /* Remove potential extra bottom margin */
+     /* Widths are handled by 6u/12u$(medium) classes */
+}
+
+/* Ensure the form section doesn't cause unexpected width issues */
+#consultation-form-container {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure the image span behaves correctly */
+#main .row .image.fit {
+    margin-top: 0; /* Align image closer to top if needed */
+}
+
+/* Responsive stacking should still be handled by 12u$(medium) */
+@media screen and (max-width: 980px) {
+    #main .row.items-start {
+        display: block !important; /* Revert to block display for stacking */
+    }
+     #main .row > .column-container {
+         width: 100% !important; /* Ensure full width when stacked */
+         margin-bottom: 2em !important; /* Add space between stacked items */
+     }
+      #main .row > .column-container:last-child {
+         margin-bottom: 0 !important;
+     }
+}
+/* --- End Consultation Page Layout Fix --- */

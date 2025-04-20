@@ -1,82 +1,233 @@
 <!DOCTYPE HTML>
-
 <html>
 	<head>
-		
-		<title>Before and After Pictures</title>
-		<meta name ="description" content="Studio Bella Permanent makeup before and after pictures."/>
+		<title>Before and After Photos | Studio Bella Permanent Makeup Austin</title>
+		<meta name ="description" content="See real client transformations! Browse Studio Bella's before and after gallery for permanent eyebrows, eyeliner, lip blush, and more in Austin, TX."/>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<!-- Correct path to main CSS -->
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="icon" href="images/eyebrowBrowserTabIcon.jpg">
+		<!-- Correct path to Font Awesome CSS -->
+        <link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<!-- Correct path to favicon -->
+		<link rel="icon" href="assets/images/eyebrowBrowserTabIcon.jpg">
 
-		<!-- Google Tag Manager -->
-		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PNKPQBX');</script>
-		<!-- End Google Tag Manager -->
 		
-	<script src="assets/js/globalHead.js"></script>
-</head>
+
+		<!-- Correct path to global head script -->
+		<script src="assets/js/globalHead.js"></script>
+
+        <!-- ==== Inline CSS for Gallery ==== -->
+        <style>
+            .ba-gallery-grid {
+                display: grid;
+                /* Responsive grid: Adjusts columns based on available width */
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5em; /* Space between grid items */
+                margin-top: 2em;
+                margin-bottom: 3em;
+            }
+
+            .ba-gallery-item {
+                background-color: #f9f9f9; /* Light background for items */
+                border-radius: 6px;
+                overflow: hidden; /* Clip image corners */
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+                display: flex; /* Use flexbox for content alignment */
+                flex-direction: column; /* Stack image and caption */
+            }
+
+            .ba-gallery-item:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+            }
+
+            .ba-gallery-item img {
+                display: block;
+                width: 100%;
+                height: auto; /* Maintain aspect ratio */
+                aspect-ratio: 1 / 1; /* Force square aspect ratio */
+                object-fit: cover; /* Cover the area, may crop */
+                border-bottom: 1px solid #eee; /* Separator line */
+            }
+
+            .ba-gallery-item .caption {
+                padding: 0.8em 1em;
+                font-size: 0.9em;
+                text-align: center;
+                color: #555;
+                background-color: #fff; /* White background for caption */
+                margin-top: auto; /* Push caption to bottom if needed */
+            }
+
+            .gallery-cta {
+                text-align: center;
+                margin-top: 2em;
+                padding: 2em;
+                background-color: #f8f8f8;
+                border-radius: 6px;
+                border: 1px solid #e0e0e0;
+            }
+            .gallery-cta p {
+                margin-bottom: 1em;
+            }
+
+            /* Responsive adjustments */
+             @media screen and (max-width: 736px) {
+                .ba-gallery-grid {
+                    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                    gap: 1em;
+                }
+                 .ba-gallery-item .caption {
+                    font-size: 0.85em;
+                    padding: 0.6em 0.8em;
+                }
+             }
+              @media screen and (max-width: 480px) {
+                .ba-gallery-grid {
+                    grid-template-columns: 1fr; /* Single column on very small screens */
+                    gap: 1.5em;
+                }
+                 .ba-gallery-item img {
+                    aspect-ratio: 4 / 3; /* Adjust aspect ratio for single column */
+                 }
+              }
+        </style>
+        <!-- ==== End Inline CSS ==== -->
+
+	</head>
 	<body>
-		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNKPQBX"
-		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-		<!-- End Google Tag Manager (noscript) -->
+		
 
-
-		<!-- Import NavMenu -->
+		<!-- Import NavMenu (Correct path from root) -->
 		<script language="javascript" type="text/javascript" src="assets/js/navMenu.js"></script>
 
 		<!-- Main -->
-			<section id = "main">
-				<div class = "inner">
-					<header class="major special">
-						<h1>Before and After Photos</h1>
-                        <p>See the stunning transformations achieved with permanent makeup at Studio Bella.</p>
-					</header>
+		<section id="main">
+			<div class="inner">
+				<header class="major special">
+					<h1>Before and After Gallery</h1>
+					<p>Witness the stunning transformations achieved with expert <a href="services.html">permanent makeup</a> at Studio Bella.</p>
+				</header>
 
-					<!-- Updated Gallery Section -->
-                    <div class="box alt gallery-box">
-                        <div class="image-gallery">
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba1.jpg" alt="Permanent Makeup Before After 1" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba2.jpg" alt="Permanent Makeup Before After 2" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba3.jpg" alt="Permanent Makeup Before After 3" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba4.jpg" alt="Permanent Makeup Before After 4" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba5.jpg" alt="Permanent Makeup Before After 5" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba6.jpg" alt="Permanent Makeup Before After 6" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba7.jpg" alt="Permanent Makeup Before After 7" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba8.jpg" alt="Permanent Makeup Before After 8" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba9.jpg" alt="Permanent Makeup Before After 9" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba10.jpg" alt="Permanent Makeup Before After 10" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba11.jpg" alt="Permanent Makeup Before After 11" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba12.jpg" alt="Permanent Makeup Before After 12" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba13.jpg" alt="Permanent Makeup Before After 13" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba14.JPG" alt="Permanent Makeup Before After 14" /></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="images/beforeAfter/ba15.JPG" alt="Permanent Makeup Before After 15" /></span></div>
-                            <!-- Add more items here if new images are added -->
-                        </div>
-					</div>
-                    <!-- End Updated Gallery Section -->
+                <p class="text-center">Browse through real results from our happy clients. See the difference permanent eyebrows, eyeliner, and lip blush can make!</p>
 
-                    <div style="text-align: center; margin-top: 2em;">
-                        <p>Ready for your own transformation?</p>
-                        <a href="contact.html" class="button special">Book Your Free Consultation</a>
-                    </div>
+				                <!-- ==== New Gallery Section ==== -->
+								<div class="ba-gallery-grid">
 
-				</div>
-			</section>
+									<!-- Eyebrow Images -->
+									<div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow1.webp" alt="Permanent Eyebrow Transformation 1" loading="lazy">
+										<div class="caption"><a href="landing/eyebrows.html">Eyebrow Enhancement</a></div>
+									</div>
+									<div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow2.webp" alt="Permanent Eyebrow Transformation 2" loading="lazy">
+										<div class="caption"><a href="landing/eyebrows.html">Natural Eyebrow Definition</a></div>
+									</div>
+									<div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow3.webp" alt="Permanent Eyebrow Transformation 3" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Microblading Eyebrows</a></div>
+									</div>
+									<div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow4.webp" alt="Permanent Eyebrow Transformation 4" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Soft Powder Brows</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow5.webp" alt="Permanent Eyebrow Transformation 5" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Eyebrow Shape Correction</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyeBrow6.webp" alt="Permanent Eyebrow Transformation 6" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Combination Brows</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow7.webp" alt="Permanent Eyebrow Transformation 7" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Eyebrow Before & After</a></div>
+									</div>
+									<div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow8.webp" alt="Permanent Eyebrow Transformation 8" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Fuller Eyebrows</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow9.webp" alt="Permanent Eyebrow Transformation 9" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Defined Eyebrows</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyebrow10.webp" alt="Permanent Eyebrow Transformation 10" loading="lazy">
+										 <div class="caption"><a href="landing/eyebrows.html">Natural Hair Strokes</a></div>
+									</div>
+				
+									 <!-- Eyeliner Images -->
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyeliner1.webp" alt="Permanent Eyeliner Transformation 1" loading="lazy">
+										 <div class="caption"><a href="landing/eyeliner.html">Classic Eyeliner</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyeliner2.webp" alt="Permanent Eyeliner Transformation 2" loading="lazy">
+										 <div class="caption"><a href="landing/eyeliner.html">Lash Enhancement Liner</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyeliner3.webp" alt="Permanent Eyeliner Transformation 3" loading="lazy">
+										 <div class="caption"><a href="landing/eyeliner.html">Subtle Eyeliner</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyeliner4.webp" alt="Permanent Eyeliner Transformation 4" loading="lazy">
+										 <div class="caption"><a href="landing/eyeliner.html">Defined Eyeliner</a></div>
+									</div>
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baEyeliner5.webp" alt="Permanent Eyeliner Transformation 5" loading="lazy">
+										 <div class="caption"><a href="landing/eyeliner.html">Eyeliner Before & After</a></div>
+									</div>
+				
+									<!-- Lips Images -->
+									 <div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/baLips1.webp" alt="Permanent Lip Blush Transformation 1" loading="lazy">
+										 <div class="caption"><a href="landing/lips.html">Natural Lip Blush</a></div>
+									</div>
+				
+									<!-- Add more items here if new images are added, linking appropriately -->
+									<!-- Example:
+									<div class="ba-gallery-item">
+										<img src="assets/images/beforeAfter/newImage.webp" alt="Description of New Image" loading="lazy">
+										 <div class="caption"><a href="landing/service.html">Service Type</a></div>
+									</div>
+									-->
+								</div>
+								<!-- ==== End New Gallery Section ==== -->
 
-		<!-- Import Footer -->
-			<script language="javascript" type="text/javascript" src="assets/js/footer.js"></script>
+                <!-- Call to Action Section -->
+                <section class="gallery-cta">
+                    <h2>Inspired by these Transformations?</h2>
+                    <p>Imagine waking up every day with perfectly defined brows, captivating eyes, or beautifully flushed lips! Let Master Technician Cookie Bandel help you achieve your desired look.</p>
+                     <p>Learn more about our specific <a href="services.html">permanent makeup services</a> or read answers to <a href="faq.html">frequently asked questions</a>.</p>
+                    <ul class="actions" style="justify-content: center; margin-bottom: 0;">
+                        <li><a href="consultation.html" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
+                        <li><a href="contact.html" class="button alt icon fa-envelope">Contact Us</a></li>
+                    </ul>
+                </section>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/skel.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			</div>
+		</section>
+
+		<!-- Import Footer (Correct path from root) -->
+		<script language="javascript" type="text/javascript" src="assets/js/footer.js"></script>
+
+		<!-- Scripts (Correct paths from root) -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/skel.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+        <!-- ==== Inline JS (if needed for future gallery enhancements like lightboxes) ==== -->
+        <script>
+            // Example: Placeholder for future gallery JS
+            // document.addEventListener('DOMContentLoaded', function() {
+            //     console.log("Before/After Gallery page loaded.");
+            //     // Add lightbox initialization or other JS here if required later
+            // });
+        </script>
+         <!-- ==== End Inline JS ==== -->
 
 	</body>
 </html>

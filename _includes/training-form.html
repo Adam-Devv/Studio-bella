@@ -1,0 +1,45 @@
+<!-- _includes/training-form.html -->
+<!-- Reusable Training Inquiry Form Structure -->
+<form action="https://formspree.io/f/mdopqyvv" method="POST">
+    <!-- Hidden fields will be populated by JavaScript -->
+    <input type="hidden" name="_subject" value="">
+    <input type="hidden" name="form_source" value=""> <!-- Changed from service_interest -->
+
+    <!-- Use 50% gutter row for consistent spacing -->
+    <div class="row uniform 50%">
+        <!-- First Name Field -->
+        <div class="6u 12u$(xsmall)">
+            <label for="training-first-name" class="sr-only">First Name</label> <!-- Label for accessibility -->
+            <input type="text" name="first_name" id="training-first-name" placeholder="First Name*" required />
+        </div>
+        <!-- Last Name Field -->
+        <div class="6u$ 12u$(xsmall)">
+            <label for="training-last-name" class="sr-only">Last Name</label> <!-- Label for accessibility -->
+            <input type="text" name="last_name" id="training-last-name" placeholder="Last Name*" required />
+        </div>
+        <!-- Email Field -->
+        <div class="6u 12u$(xsmall)">
+            <label for="training-email" class="sr-only">Email</label> <!-- Label for accessibility -->
+            <input type="email" name="_replyto" id="training-email" placeholder="Email*" required />
+        </div>
+        <!-- Phone Field -->
+         <div class="6u$ 12u$(xsmall)">
+            <label for="training-phone" class="sr-only">Phone</label> <!-- Label for accessibility -->
+            <input type="tel" name="phone" id="training-phone" placeholder="Phone (Optional)" />
+        </div>
+        <!-- Message Field -->
+        <div class="12u$">
+            <label for="training-message" class="sr-only">Message</label> <!-- Label for accessibility -->
+            <textarea name="message" id="training-message" placeholder="Questions about the training course? (Optional)" rows="3"></textarea>
+        </div>
+        <!-- Actions -->
+        <div class="12u$">
+            <ul class="actions" style="margin: 0;"> <!-- Remove default margin from actions ul -->
+                <li><button type="submit" class="button special fit">Request Training Info</button></li>
+            </ul>
+        </div>
+    </div>
+</form>
+<!-- Add screen-reader only class to CSS if not already present in main.css -->
+<!-- You might want to move this style to main.css if used elsewhere -->
+<style>.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); border: 0; }</style>
