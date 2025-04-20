@@ -128,27 +128,29 @@
                 <!-- Placeholder for Social Proof Section -->
                 <div id="social-proof-placeholder"></div>
                 <script>
-                  fetch('_includes/social-proof.html') // Path from root is correct here
-                    .then(response => {
-                        if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
-                        return response.text();
-                    })
-                    .then(html => {
-                      const placeholder = document.getElementById('social-proof-placeholder');
-                      if (placeholder) {
-                          placeholder.innerHTML = html;
-                          // Call the initialization function after HTML is loaded
-                          if (typeof initSocialProofSlider === 'function') {
-                              initSocialProofSlider(placeholder);
-                          } else {
-                              console.error('initSocialProofSlider function not found. Is social-proof-slider.js loaded?');
-                          }
-                      } else {
-                          console.error('Social proof placeholder element not found.');
-                      }
-                    })
-                    .catch(error => console.error('Error loading or processing social proof section:', error));
-                </script>
+					fetch('includes/social-proof.html') // <-- CHANGED PATH: Remove underscore
+					  .then(response => {
+						  if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
+						  return response.text();
+					  })
+					  .then(html => {
+						const placeholder = document.getElementById('social-proof-placeholder');
+						if (placeholder) {
+							placeholder.innerHTML = html;
+							const socialProofSection = placeholder.querySelector('#social-proof');
+							if (socialProofSection && typeof initSocialProofSlider === 'function') {
+								initSocialProofSlider(socialProofSection);
+							} else if (!socialProofSection) {
+								 console.error('Could not find #social-proof element within placeholder.');
+							} else {
+								console.error('initSocialProofSlider function not found. Is social-proof-slider.js loaded?');
+							}
+						} else {
+							console.error('Social proof placeholder element not found.');
+						}
+					  })
+					  .catch(error => console.error('Error loading or processing social proof section:', error));
+				  </script>
                 <!-- End Social Proof Section -->
                 <hr style="margin: 3em 0;">
 

@@ -116,34 +116,29 @@
         <div id="social-proof-placeholder"></div>
         <!-- Fetch and Inject Script -->
         <script>
-          fetch('_includes/social-proof.html') // Correct path from root
-            .then(response => {
-                if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
-                return response.text();
-            })
-            .then(html => {
-              const placeholder = document.getElementById('social-proof-placeholder');
-              if (placeholder) {
-                  placeholder.innerHTML = html;
-                  // Call the initialization function from social-proof-slider.js
-                  if (typeof initSocialProofSlider === 'function') {
-                      // Ensure the slider init runs *after* the HTML is inserted
-                      // We need to target the newly added container inside the placeholder
-                      const socialProofSection = placeholder.querySelector('#social-proof');
-                      if (socialProofSection) {
-                          initSocialProofSlider(socialProofSection);
-                      } else {
-                          console.error('Could not find #social-proof element within placeholder.');
-                      }
-                  } else {
-                      console.error('initSocialProofSlider function not found. Was social-proof-slider.js loaded?');
-                  }
-              } else {
-                  console.error('Social proof placeholder element not found.');
-              }
-            })
-            .catch(error => console.error('Error loading or processing social proof section:', error));
-        </script>
+            fetch('includes/social-proof.html') // <-- CHANGED PATH: Remove underscore
+              .then(response => {
+                  if (!response.ok) { throw new Error(`HTTP error! Status: ${response.status}`); }
+                  return response.text();
+              })
+              .then(html => {
+                const placeholder = document.getElementById('social-proof-placeholder');
+                if (placeholder) {
+                    placeholder.innerHTML = html;
+                    const socialProofSection = placeholder.querySelector('#social-proof');
+                    if (socialProofSection && typeof initSocialProofSlider === 'function') {
+                        initSocialProofSlider(socialProofSection);
+                    } else if (!socialProofSection) {
+                         console.error('Could not find #social-proof element within placeholder.');
+                    } else {
+                        console.error('initSocialProofSlider function not found. Was social-proof-slider.js loaded?');
+                    }
+                } else {
+                    console.error('Social proof placeholder element not found.');
+                }
+              })
+              .catch(error => console.error('Error loading or processing social proof section:', error));
+          </script>
         <!-- End Social Proof Section -->
     </section>
 
