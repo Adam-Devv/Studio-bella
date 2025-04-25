@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Permanent Makeup Services & Pricing | Studio Bella Austin</title>
-    <meta name="description" content="Explore Studio Bella's permanent makeup services in Austin: expert eyebrows (microblading, powder), eyeliner, lip blush, paramedical tattooing, corrections, and more. View pricing."/>
+    <title>Permanent Makeup, Teeth Whitening & Piercing Services | Studio Bella Austin</title> <!-- Updated Title -->
+    <meta name="description" content="Explore Studio Bella's services in Austin: expert PMU (eyebrows, eyeliner, lips), DaVinci Teeth Whitening, Ear Piercing, paramedical tattooing, corrections, and more. View pricing & specials."/> <!-- Updated Description -->
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="assets/css/main.css" />
@@ -65,6 +65,14 @@
             margin-top: 0;
             margin-bottom: 0.75em;
         }
+         .service-card h3 a { /* Style links in titles */
+             color: inherit;
+             border-bottom: none;
+             text-decoration: none;
+         }
+         .service-card h3 a:hover {
+             color: #c88ea5; /* Primary accent color on hover */
+         }
 
         .service-card p {
             font-size: 0.95em;
@@ -140,11 +148,23 @@
     <section id="main">
         <div class="inner">
             <header class="major special">
-                <h1>Permanent Makeup Services</h1>
-                <p>Enhance your natural beauty with expertly applied permanent cosmetics by Master Technician Cookie Bandel.</p>
+                <h1>Our Services</h1> <!-- Simplified Title -->
+                <p>Enhance your natural beauty with expertly applied permanent cosmetics, teeth whitening, and ear piercing by Master Technician Cookie Bandel.</p> <!-- Updated Intro -->
             </header>
 
             <div class="services-grid">
+
+                <!-- Eyebrows Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/eyebrow1.webp" alt="Permanent Eyebrows Microblading Austin" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                         <h3><a href="landing/eyebrows.html">Permanent Eyebrows</a></h3>
+                         <p>Achieve your perfect brow shape with techniques like microblading (hair strokes), powder/ombre shading, or a combination. We use multiple shades for dimension. Explore <a href="blogs/microblading-vs-powder-brows-austin.html">Microblading vs Powder Brows</a>.</p>
+                         <div class="price">$650</div>
+                    </div>
+                </article>
 
                 <!-- Eyeliner Card -->
                 <article class="service-card">
@@ -152,7 +172,7 @@
                         <img src="assets/images/general_photos/eyeliner1.webp" alt="Permanent Eyeliner Austin" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3><a href="landing/eyeliner.html">Eyeliner</a></h3>
+                        <h3><a href="landing/eyeliner.html">Permanent Eyeliner</a></h3>
                         <p>Standard liner is +/- 1mm thick for subtle definition. You approve the design throughout. Add a wing for a bolder look. See our <a href="blogs/permanent-eyeliner-austin-guide.html">Eyeliner Guide</a>.</p>
                         <div class="price">$650 <span>Add Wing: +$150</span></div>
                     </div>
@@ -176,21 +196,33 @@
                         <img src="assets/images/general_photos/lips1.webp" alt="Permanent Lip Blush Austin" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3><a href="landing/lips.html">Lips (Liner or Blush)</a></h3>
+                        <h3><a href="landing/lips.html">Permanent Lips (Liner or Blush)</a></h3>
                         <p>Define your lip shape with liner or add a natural wash of color with Lip Blushing. Helps create symmetry and fullness. Learn about <a href="blogs/lip-blush-austin-guide.html">Lip Blushing</a> and <a href="blogs/lip-blush-aftercare-austin.html">aftercare</a>.</p>
                          <div class="price">$650</div>
                     </div>
                 </article>
 
-                <!-- Eyebrows Card -->
+                 <!-- DaVinci Teeth Whitening Card -->
                 <article class="service-card">
                      <div class="card-image-wrapper">
-                        <img src="assets/images/general_photos/eyebrow1.webp" alt="Permanent Eyebrows Microblading Austin" loading="lazy">
+                        <img src="assets/images/general_photos/faceGeneric2.webp" alt="DaVinci Teeth Whitening Austin" loading="lazy"> <!-- Placeholder image -->
                     </div>
                     <div class="card-content">
-                         <h3><a href="landing/eyebrows.html">Eyebrows</a></h3>
-                         <p>Achieve your perfect brow shape with techniques like microblading (hair strokes), powder/ombre shading, or a combination. We use multiple shades for dimension. Explore <a href="blogs/microblading-vs-powder-brows-austin.html">Microblading vs Powder Brows</a>.</p>
-                         <div class="price">$650</div>
+                        <h3>DaVinci Teeth Whitening</h3>
+                        <p>Brighten your smile safely and effectively with the professional DaVinci Teeth Whitening system. Achieve noticeable results in just a few sessions. Ask about package deals!</p>
+                         <div class="price">Pricing Varies <span><a href="specials.html">See April Special!</a></span></div>
+                    </div>
+                </article>
+
+                 <!-- Ear Piercing Card -->
+                <article class="service-card">
+                     <div class="card-image-wrapper">
+                        <img src="assets/images/general_photos/faceGeneric3.webp" alt="Ear Piercing Austin" loading="lazy"> <!-- Placeholder image -->
+                    </div>
+                    <div class="card-content">
+                        <h3>Ear Piercing</h3>
+                        <p>Professional and hygienic ear piercing services. Choose from our selection of high-quality earrings.</p>
+                        <div class="price">Starting at $25 <span>(Earrings: $25 Small / $35 Regular). <a href="specials.html">See April Special!</a></span></div>
                     </div>
                 </article>
 
@@ -200,7 +232,7 @@
                         <img src="assets/images/general_photos/faceGeneric4.webp" alt="Permanent Makeup Correction Austin" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3><a href="landing/pmu-correction-removal.html">Corrections / Removal</a></h3>
+                        <h3><a href="landing/pmu-correction-removal.html">PMU Corrections / Removal</a></h3>
                         <p>Unhappy with previous PMU? We specialize in correcting color, shape, and asymmetry, or safely lightening/removing unwanted pigment using saline removal techniques. See our <a href="blogs/fixing-bad-permanent-makeup-austin.html">guide on fixing bad PMU</a>.</p>
                         <div class="price">$150/hour <span>1 Hour Minimum</span></div>
                     </div>
@@ -236,7 +268,7 @@
                         <img src="assets/images/general_photos/faceGeneric1.webp" alt="Permanent Blush Austin" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3><a href="landing/facial-shading.html">Blush</a></h3>
+                        <h3><a href="landing/facial-shading.html">Permanent Blush</a></h3>
                         <p>Achieve a delicate, natural-looking flush, like you've just been kissed by the sun, without daily makeup application.</p>
                          <div class="price">$450</div>
                     </div>
@@ -260,7 +292,7 @@
                         <img src="assets/images/general_photos/eyeliner1.webp" alt="Permanent Eye Shadow Austin" loading="lazy">
                     </div>
                     <div class="card-content">
-                        <h3><a href="landing/facial-shading.html">Eye Shadow</a></h3>
+                        <h3><a href="landing/facial-shading.html">Permanent Eye Shadow</a></h3>
                         <p>Enjoy a soft, powder-like eye shadow effect that won't crease or need reapplication. Many shades available or custom-created.</p>
                          <div class="price">$400+ <span>Depending on Design</span></div>
                     </div>
@@ -290,30 +322,6 @@
                     </div>
                 </article>
 
-                <!-- Bindi Card -->
-               <!--  <article class="service-card">
-                    <div class="card-image-wrapper">
-                        <img src="assets/images/general_photos/faceGeneric1.webp" alt="Permanent Bindi Austin" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Bindi</h3>
-                        <p>Permanent application of a Bindi in your choice of size and color.</p>
-                         <div class="price">$50</div>
-                    </div>
-                </article> -->
-
-                 <!-- White Eyeliner Card -->
-                <!-- <article class="service-card">
-                     <div class="card-image-wrapper">
-                        <img src="assets/images/general_photos/eyeliner1.webp" alt="White Permanent Eyeliner Austin" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>White Eyeliner</h3>
-                        <p>Applied perfectly above traditional eyeliner or alone, this adds a brightening effect to make eyes pop. Also available in other colors.</p>
-                        <div class="price">$450</div>
-                    </div>
-                </article>-->
-
                  <!-- And Much More Card -->
                 <article class="service-card">
                      <div class="card-image-wrapper">
@@ -321,7 +329,7 @@
                     </div>
                     <div class="card-content">
                         <h3>And More!</h3>
-                        <p>This includes common services, but isn't exhaustive. If you don't see what you're looking for, please <a href="contact.html">contact us</a>! We likely offer it.</p>
+                        <p>This includes our most popular services. If you don't see what you're looking for, please <a href="contact.html">contact us</a>! We likely offer it.</p>
                         <div class="price"><a href="contact.html" class="button small alt">Inquire</a></div>
                     </div>
                 </article>
@@ -332,7 +340,7 @@
             <!-- Call to Action Section -->
             <section class="cta-section">
                 <h2>Ready to Simplify Your Routine?</h2>
-                <p>Find out which permanent makeup service is perfect for you. Consultations with Cookie are always free and informative.</p>
+                <p>Find out which permanent makeup or beauty service is perfect for you. Consultations with Cookie are always free and informative.</p> <!-- Updated CTA Text -->
                 <ul class="actions" style="justify-content: center; margin-bottom: 0;">
 					<li><a href="consultation.html" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
 					<li><a href="faq.html" class="button alt icon fa-question-circle">Read Our FAQ</a></li>
