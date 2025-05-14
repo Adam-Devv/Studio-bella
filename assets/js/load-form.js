@@ -1,60 +1,59 @@
 // assets/js/load-form.js
 document.addEventListener('DOMContentLoaded', function() {
+    console.log("load-form.js: DOMContentLoaded fired.");
+
     const consultationFormContainer = document.getElementById('consultation-form-container');
     const contactFormContainer = document.getElementById('contact-form-container');
     const trainingFormContainer = document.getElementById('training-form-container');
 
-    const isLandingOrBlogPage = window.location.pathname.includes('/landing/') || window.location.pathname.includes('/blogs/');
-    const basePath = isLandingOrBlogPage ? '../' : ''; // This helps if thank you pages are relative, but we'll use absolute
+    // Log whether containers are found
+    console.log("load-form.js: consultationFormContainer found?", !!consultationFormContainer);
+    console.log("load-form.js: contactFormContainer found?", !!contactFormContainer);
+    console.log("load-form.js: trainingFormContainer found?", !!trainingFormContainer);
 
-    // --- Helper Function to get the correct Thank You URL ---
+    const isLandingOrBlogPage = window.location.pathname.includes('/landing/') || window.location.pathname.includes('/blogs/');
+    const basePath = isLandingOrBlogPage ? '../' : '';
+
     const getThankYouUrl = (formType) => {
-        // Using absolute URLs as specified
         switch (formType) {
-            case 'consultation':
-                return `https://www.studio-bella.com/consultation-thank-you.html`;
-            case 'contact':
-            case 'training': // Both contact and training go to the same thank you page
-                return `https://www.studio-bella.com/contact-thank-you.html`;
-            default:
-                // Fallback, though ideally all forms should have a defined type
-                return `https://www.studio-bella.com/thank-you-generic.html`;
+            case 'consultation': return `https://www.studio-bella.com/consultation-thank-you.html`;
+            case 'contact': case 'training': return `https://www.studio-bella.com/contact-thank-you.html`;
+            default: return `https://www.studio-bella.com/thank-you-generic.html`;
         }
     };
 
-    // --- Function to handle form submission with AJAX and redirect ---
     const handleFormSubmitAndRedirect = (formElement, formType) => {
         if (!formElement) {
-            console.error("handleFormSubmitAndRedirect: formElement is null for formType:", formType);
+            console.error("load-form.js: handleFormSubmitAndRedirect called with null formElement for formType:", formType);
             return;
         }
+        console.log(`load-form.js: Attaching submit listener to form for type: ${formType}`, formElement);
 
         formElement.addEventListener('submit', function(e) {
+            console.log(`load-form.js: Submit event triggered for formType: ${formType}`);
             e.preventDefault();
             const form = e.target;
             const data = new FormData(form);
             const thankYouUrl = getThankYouUrl(formType);
 
-            const submitButton = form.querySelector('button[type="submit"]');
+            const submitButton = form.querySelector('button[type="submit"].g-recaptcha'); // Ensure targeting reCAPTCHA button
             const originalButtonText = submitButton ? submitButton.textContent : 'Submit';
             if (submitButton) {
                 submitButton.disabled = true;
                 submitButton.textContent = 'Submitting...';
             }
 
-            fetch(form.action, { // form.action will get the Formspree URL from the form's HTML
+            console.log(`load-form.js: Fetching to Formspree URL: ${form.action} for formType: ${formType}`);
+            fetch(form.action, {
                 method: form.method,
                 body: data,
-                headers: {
-                    'Accept': 'application/json'
-                }
+                headers: { 'Accept': 'application/json' }
             }).then(response => {
+                console.log(`load-form.js: Formspree response status: ${response.status} for formType: ${formType}`);
                 if (response.ok) {
                     window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({
-                        'event': 'form_submission_success',
-                        'form_name': formType
-                    });
+                    window.dataLayer.push({'event': 'form_submission_success', 'form_name': formType});
+                    console.log(`load-form.js: Redirecting to ${thankYouUrl} for formType: ${formType}`);
                     window.location.href = thankYouUrl;
                 } else {
                     response.json().then(errorData => {
@@ -65,14 +64,16 @@ document.addEventListener('DOMContentLoaded', function() {
                             errorMessage += ` Status: ${response.status} ${response.statusText}`;
                         }
                         alert(errorMessage);
-                        console.error("Formspree error response:", errorData);
-                    }).catch(() => {
+                        console.error(`load-form.js: Formspree error response for ${formType}:`, errorData);
+                    }).catch((jsonError) => {
                         alert('Oops! There was a problem submitting your form and parsing the error. Status: ' + response.status);
+                        console.error(`load-form.js: Error parsing Formspree JSON response for ${formType}:`, jsonError, "Raw response text might follow if available.");
+                        // response.text().then(text => console.error("Raw error response text:", text));
                     });
                 }
             }).catch(error => {
                 alert('Oops! There was a network error or problem submitting your form.');
-                console.error('Form submission fetch error:', error);
+                console.error(`load-form.js: Form submission fetch error for ${formType}:`, error);
             }).finally(() => {
                 if (submitButton) {
                     submitButton.disabled = false;
@@ -82,9 +83,14 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    // --- Function to load form HTML ---
     const loadFormHtml = (container, formFileName, formType, populateFieldsCallback) => {
-        if (!container) return; // Don't proceed if the container doesn't exist on the page
+        if (!container) {
+            // This console log should NOT appear for forms not on the current page
+            // if the initial if(containerName) checks are working.
+            console.log(`load-form.js: loadFormHtml called for ${formType}, but its container was not found. Skipping.`);
+            return;
+        }
+        console.log(`load-form.js: Loading HTML for formType: ${formType} into container:`, container);
         const formPath = `${basePath}includes/${formFileName}`;
 
         fetch(formPath)
@@ -98,57 +104,64 @@ document.addEventListener('DOMContentLoaded', function() {
                 container.innerHTML = html;
                 const formElement = container.querySelector('form');
                 if (formElement) {
+                    console.log(`load-form.js: Form element found for ${formType}. Populating fields and attaching handler.`);
                     if (populateFieldsCallback) {
                         populateFieldsCallback(formElement);
                     }
                     handleFormSubmitAndRedirect(formElement, formType);
                 } else {
-                    console.error("No form element found within loaded HTML for:", formFileName);
+                    console.error(`load-form.js: No form element found within loaded HTML for: ${formFileName}`);
                 }
             })
             .catch(error => {
-                console.error('Error loading form HTML:', error);
+                console.error(`load-form.js: Error loading form HTML for ${formType}:`, error);
                 container.innerHTML = `<p style="color: red; text-align: center; padding: 1em;">Sorry, the form could not be loaded. Please <a href="${basePath}contact.html">contact us</a> directly.</p>`;
             });
     };
 
-    // --- Load Consultation Form ---
     if (consultationFormContainer) {
+        console.log("load-form.js: Initializing consultation form.");
         const subject = consultationFormContainer.getAttribute('data-subject') || 'Website Lead';
-        const service = consultationFormContainer.getAttribute('data-service') || 'General Consultation Inquiry'; // Made more specific
+        const service = consultationFormContainer.getAttribute('data-service') || 'General Consultation Inquiry';
         loadFormHtml(consultationFormContainer, 'consultation-form.html', 'consultation', (formElement) => {
-             if (formElement) {
-                 const subjectInput = formElement.querySelector('input[name="_subject"]');
-                 const serviceInput = formElement.querySelector('input[name="service_interest"]');
-                 if (subjectInput) subjectInput.value = subject;
-                 if (serviceInput) serviceInput.value = service;
-             }
+            if (formElement) {
+                const subjectInput = formElement.querySelector('input[name="_subject"]');
+                const serviceInput = formElement.querySelector('input[name="service_interest"]');
+                if (subjectInput) subjectInput.value = subject;
+                if (serviceInput) serviceInput.value = service;
+            }
         });
+    } else {
+        console.log("load-form.js: Consultation form container not found on this page.");
     }
 
-    // --- Load Contact Form ---
     if (contactFormContainer) {
-        // No specific data attributes to pull for subject/service for the general contact form by default
-        const subject = "General Contact Form Inquiry (Main Site)"; // Default subject
+        console.log("load-form.js: Initializing contact form.");
+        const subject = "General Contact Form Inquiry (Main Site)";
         loadFormHtml(contactFormContainer, 'contact-form.html', 'contact', (formElement) => {
             if (formElement) {
                 const subjectInput = formElement.querySelector('input[name="_subject"]');
                 if (subjectInput) subjectInput.value = subject;
             }
         });
+    } else {
+        console.log("load-form.js: Contact form container not found on this page.");
     }
 
-    // --- Load Training Form ---
     if (trainingFormContainer) {
+        console.log("load-form.js: Initializing training form.");
         const subject = trainingFormContainer.getAttribute('data-subject') || 'Training Course Information Request (Main Site)';
-        const source = trainingFormContainer.getAttribute('data-source') || 'Training Page Inquiry'; // Changed from service_interest
+        const source = trainingFormContainer.getAttribute('data-source') || 'Training Page Inquiry';
         loadFormHtml(trainingFormContainer, 'training-form.html', 'training', (formElement) => {
-             if (formElement) {
-                 const subjectInput = formElement.querySelector('input[name="_subject"]');
-                 const sourceInput = formElement.querySelector('input[name="form_source"]'); // Corrected field name
-                 if (subjectInput) subjectInput.value = subject;
-                 if (sourceInput) sourceInput.value = source;
-             }
+            if (formElement) {
+                const subjectInput = formElement.querySelector('input[name="_subject"]');
+                const sourceInput = formElement.querySelector('input[name="form_source"]');
+                if (subjectInput) subjectInput.value = subject;
+                if (sourceInput) sourceInput.value = source;
+            }
         });
+    } else {
+        console.log("load-form.js: Training form container not found on this page.");
     }
+    console.log("load-form.js: Script execution finished.");
 });
