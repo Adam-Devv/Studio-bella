@@ -1,5 +1,5 @@
 <!-- Reusable Consultation Form Structure -->
- 
+<!-- Make sure this action URL is your NEW Formspree endpoint for this form -->
 <form action="https://formspree.io/f/mrbqreoe" method="POST">
     <!-- Hidden fields will be populated by JavaScript -->
     <input type="hidden" name="_subject" value="">
@@ -28,7 +28,13 @@
         </div>
         <div class="12u$">
             <ul class="actions" style="margin: 0;">
-                <li><button type="submit" class="button special fit">Request My Consultation</button></li>
+                <li>
+                    <button type="submit"
+                            class="button special fit g-recaptcha"
+                            data-sitekey="6LeKiJkfAAAAACWBecAiuKn0zrVkDIzfuJOaPx0q">
+                        Request My Consultation
+                    </button>
+                </li>
             </ul>
         </div>
     </div>

@@ -1,5 +1,6 @@
 // assets/js/globalHead.js
 
+
 document.write(`
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -13,4 +14,8 @@ document.write(`
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PNKPQBX"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Google reCAPTCHA API Script -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer><\/script>
+    <!-- End Google reCAPTCHA API Script -->
 `);

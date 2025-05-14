@@ -1,6 +1,6 @@
 <!-- Reusable Contact Form Structure -->
- 
-<form action="https://formspree.io/f/mrbqreoe" method="POST">
+<!-- Make sure this action URL is your NEW Formspree endpoint for this form -->
+<form action="https://formspree.io/f/YOUR_NEW_CONTACT_FORM_ID" method="POST"> <!-- UPDATE YOUR_NEW_CONTACT_FORM_ID -->
     <input type="hidden" name="_subject" value=""> <!-- Populated by load-form.js -->
 
     <div class="row uniform 50%">
@@ -26,7 +26,13 @@
         </div>
         <div class="12u$">
             <ul class="actions" style="margin: 0;">
-                <li><button type="submit" class="button special fit">Send Message</button></li>
+                <li>
+                    <button type="submit"
+                            class="button special fit g-recaptcha"
+                            data-sitekey="6LeKiJkfAAAAACWBecAiuKn0zrVkDIzfuJOaPx0q">
+                        Send Message
+                    </button>
+                </li>
             </ul>
         </div>
     </div>
