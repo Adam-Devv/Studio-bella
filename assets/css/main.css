@@ -638,14 +638,17 @@ form:not(.landing-form-section form) .button[type="submit"] {
 	background-position: center center;
 	background-repeat: no-repeat;
 }
+
 /* Specific Backgrounds for Each Landing Page Hero */
-body.landing-eyebrows #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/beforeAfter/baEyebrow1.webp); }
-body.landing-lips #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/beforeAfter/baLips1.webp); }
-body.landing-eyeliner #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/beforeAfter/baEyeliner1.webp); }
-body.landing-facial-shading #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/general_photos/faceGeneric1.webp); }
-body.landing-paramedical #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/general_photos/scarCamo1.webp); }
-body.landing-training #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/general_photos/technician_working_eyeliner.webp); }
-body.landing-general-pmu #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/banners/mainPageBanner.webp); } /* This one was correct */
+/* Specific Backgrounds for Each Landing Page Hero */
+body.landing-eyebrows #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/banners/genericPageBanner.webp'); }
+body.landing-lips #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/banners/genericPageBanner (1).webp'); }
+body.landing-eyeliner #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/banners/genericPageBanner.jpg'); }
+body.landing-facial-shading #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/banners/genericPageBanner.webp'); }
+body.landing-paramedical #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/banners/genericPageBanner (1).webp'); }
+body.landing-training #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/banners/genericPageBanner.jpg'); }
+body.landing-general-pmu #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('../assets/images/banners/genericPageBanner.webp'); }
+body.landing-correction-removal #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/images/banners/genericPageBanner (1).webp'); }
 
 #landing-hero .inner { position: relative; z-index: 2; max-width: 55em; margin: 0 auto; width: calc(100% - 4em); }
 #landing-hero h1 { color: #ffffff; font-size: 2.5em; margin-bottom: 0.5em; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }
