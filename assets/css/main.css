@@ -640,8 +640,6 @@ form:not(.landing-form-section form) .button[type="submit"] {
 }
 
 /* Specific Backgrounds for Each Landing Page Hero */
-/* Specific Backgrounds for Each Landing Page Hero */
-/* Specific Backgrounds for Each Landing Page Hero */
 body.landing-eyebrows #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banners/genericPageBanner.webp'); }
 body.landing-lips #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banners/genericPageBanner (1).webp'); }
 body.landing-eyeliner #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../images/banners/genericPageBanner.jpg'); }
