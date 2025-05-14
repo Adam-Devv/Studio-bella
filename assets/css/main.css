@@ -532,7 +532,7 @@ form:not(.landing-form-section form) .button[type="submit"] {
 	background-color: #4a3f4f; /* Fallback color */
 	color: #ffffff;
 	padding: 8em 0 6em 0; /* Reduced padding */
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../images/banner.webp"); /* Overlay + image */
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../../assets/images/banners/mainPageBanner.webp"); /* Overlay + image */
 	background-size: cover;
 	background-position: center center;
 	text-align: center; /* Center align banner content */
@@ -645,7 +645,7 @@ body.landing-eyeliner #landing-hero { background-image: linear-gradient(rgba(0, 
 body.landing-facial-shading #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/pic09.jpg); }
 body.landing-paramedical #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/pic07.jpg); }
 body.landing-training #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/PMPhoto1.jpg); }
-body.landing-general-pmu #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/banner.webp); } /* Using main banner image */
+body.landing-general-pmu #landing-hero { background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../assets/images/banners/mainPageBanner.webp); } /* Using main banner image */
 
 #landing-hero .inner { position: relative; z-index: 2; max-width: 55em; margin: 0 auto; width: calc(100% - 4em); }
 #landing-hero h1 { color: #ffffff; font-size: 2.5em; margin-bottom: 0.5em; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); }

@@ -7,9 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const trainingFormContainer = document.getElementById('training-form-container');
 
     // Log whether containers are found
-    console.log("load-form.js: consultationFormContainer found?", !!consultationFormContainer);
-    console.log("load-form.js: contactFormContainer found?", !!contactFormContainer);
-    console.log("load-form.js: trainingFormContainer found?", !!trainingFormContainer);
+    // console.log("load-form.js: consultationFormContainer found?", !!consultationFormContainer);
+    // console.log("load-form.js: contactFormContainer found?", !!contactFormContainer);
+    // console.log("load-form.js: trainingFormContainer found?", !!trainingFormContainer);
 
     const isLandingOrBlogPage = window.location.pathname.includes('/landing/') || window.location.pathname.includes('/blogs/');
     const basePath = isLandingOrBlogPage ? '../' : '';
@@ -27,33 +27,33 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error("load-form.js: handleFormSubmitAndRedirect called with null formElement for formType:", formType);
             return;
         }
-        console.log(`load-form.js: Attaching submit listener to form for type: ${formType}`, formElement);
+        // console.log(`load-form.js: Attaching submit listener to form for type: ${formType}`, formElement);
 
         formElement.addEventListener('submit', function(e) {
-            console.log(`load-form.js: Submit event triggered for formType: ${formType}`);
+            // console.log(`load-form.js: Submit event triggered for formType: ${formType}`);
             e.preventDefault();
             const form = e.target;
-            const data = new FormData(form);
+            const data = new FormData(form); // This will include g-recaptcha-response if widget is completed
             const thankYouUrl = getThankYouUrl(formType);
 
-            const submitButton = form.querySelector('button[type="submit"].g-recaptcha'); // Ensure targeting reCAPTCHA button
+            const submitButton = form.querySelector('button[type="submit"]'); // Target normal submit button
             const originalButtonText = submitButton ? submitButton.textContent : 'Submit';
             if (submitButton) {
                 submitButton.disabled = true;
                 submitButton.textContent = 'Submitting...';
             }
 
-            console.log(`load-form.js: Fetching to Formspree URL: ${form.action} for formType: ${formType}`);
+            // console.log(`load-form.js: Fetching to Formspree URL: ${form.action} for formType: ${formType}`);
             fetch(form.action, {
                 method: form.method,
                 body: data,
                 headers: { 'Accept': 'application/json' }
             }).then(response => {
-                console.log(`load-form.js: Formspree response status: ${response.status} for formType: ${formType}`);
+                // console.log(`load-form.js: Formspree response status: ${response.status} for formType: ${formType}`);
                 if (response.ok) {
                     window.dataLayer = window.dataLayer || [];
                     window.dataLayer.push({'event': 'form_submission_success', 'form_name': formType});
-                    console.log(`load-form.js: Redirecting to ${thankYouUrl} for formType: ${formType}`);
+                    // console.log(`load-form.js: Redirecting to ${thankYouUrl} for formType: ${formType}`);
                     window.location.href = thankYouUrl;
                 } else {
                     response.json().then(errorData => {
@@ -67,8 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         console.error(`load-form.js: Formspree error response for ${formType}:`, errorData);
                     }).catch((jsonError) => {
                         alert('Oops! There was a problem submitting your form and parsing the error. Status: ' + response.status);
-                        console.error(`load-form.js: Error parsing Formspree JSON response for ${formType}:`, jsonError, "Raw response text might follow if available.");
-                        // response.text().then(text => console.error("Raw error response text:", text));
+                        console.error(`load-form.js: Error parsing Formspree JSON response for ${formType}:`, jsonError);
                     });
                 }
             }).catch(error => {
@@ -79,18 +78,29 @@ document.addEventListener('DOMContentLoaded', function() {
                     submitButton.disabled = false;
                     submitButton.textContent = originalButtonText;
                 }
+                // Reset reCAPTCHA if it exists on the page and there was an error
+                if (typeof grecaptcha !== "undefined" && grecaptcha.reset) {
+                    // Find all reCAPTCHA widgets on the page. If you only have one per form load, this is okay.
+                    // If multiple forms could be on one page and loaded, you'd need to target specific widget IDs.
+                    // For now, a general reset after an error might be acceptable.
+                    try {
+                        // grecaptcha.reset(); // This might reset more than intended if multiple widgets exist.
+                        // It's often better to let the user re-attempt the CAPTCHA naturally.
+                        // If Formspree error includes "reCAPTCHA", it implies the user needs to re-validate.
+                    } catch (rcError) {
+                        console.warn("load-form.js: Error trying to reset reCAPTCHA", rcError);
+                    }
+                }
             });
         });
     };
 
     const loadFormHtml = (container, formFileName, formType, populateFieldsCallback) => {
         if (!container) {
-            // This console log should NOT appear for forms not on the current page
-            // if the initial if(containerName) checks are working.
-            console.log(`load-form.js: loadFormHtml called for ${formType}, but its container was not found. Skipping.`);
+            // console.log(`load-form.js: Container for ${formType} not found. Skipping form load.`);
             return;
         }
-        console.log(`load-form.js: Loading HTML for formType: ${formType} into container:`, container);
+        // console.log(`load-form.js: Loading HTML for formType: ${formType} into container:`, container);
         const formPath = `${basePath}includes/${formFileName}`;
 
         fetch(formPath)
@@ -104,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 container.innerHTML = html;
                 const formElement = container.querySelector('form');
                 if (formElement) {
-                    console.log(`load-form.js: Form element found for ${formType}. Populating fields and attaching handler.`);
+                    // console.log(`load-form.js: Form element found for ${formType}. Populating fields and attaching handler.`);
                     if (populateFieldsCallback) {
                         populateFieldsCallback(formElement);
                     }
@@ -120,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
     };
 
     if (consultationFormContainer) {
-        console.log("load-form.js: Initializing consultation form.");
+        // console.log("load-form.js: Initializing consultation form.");
         const subject = consultationFormContainer.getAttribute('data-subject') || 'Website Lead';
         const service = consultationFormContainer.getAttribute('data-service') || 'General Consultation Inquiry';
         loadFormHtml(consultationFormContainer, 'consultation-form.html', 'consultation', (formElement) => {
@@ -132,11 +142,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        console.log("load-form.js: Consultation form container not found on this page.");
+        // console.log("load-form.js: Consultation form container not found on this page.");
     }
 
     if (contactFormContainer) {
-        console.log("load-form.js: Initializing contact form.");
+        // console.log("load-form.js: Initializing contact form.");
         const subject = "General Contact Form Inquiry (Main Site)";
         loadFormHtml(contactFormContainer, 'contact-form.html', 'contact', (formElement) => {
             if (formElement) {
@@ -145,11 +155,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        console.log("load-form.js: Contact form container not found on this page.");
+        // console.log("load-form.js: Contact form container not found on this page.");
     }
 
     if (trainingFormContainer) {
-        console.log("load-form.js: Initializing training form.");
+        // console.log("load-form.js: Initializing training form.");
         const subject = trainingFormContainer.getAttribute('data-subject') || 'Training Course Information Request (Main Site)';
         const source = trainingFormContainer.getAttribute('data-source') || 'Training Page Inquiry';
         loadFormHtml(trainingFormContainer, 'training-form.html', 'training', (formElement) => {
@@ -161,7 +171,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     } else {
-        console.log("load-form.js: Training form container not found on this page.");
+        // console.log("load-form.js: Training form container not found on this page.");
     }
-    console.log("load-form.js: Script execution finished.");
+    // console.log("load-form.js: Script execution finished.");
 });

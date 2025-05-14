@@ -1,5 +1,5 @@
 <!-- Reusable Training Inquiry Form Structure -->
- 
+<!-- Using the single Formspree endpoint you confirmed: mrbqreoe -->
 <form action="https://formspree.io/f/mrbqreoe" method="POST">
     <input type="hidden" name="_subject" value="">
     <input type="hidden" name="form_source" value="">
@@ -25,12 +25,17 @@
             <label for="training-message" class="sr-only">Message</label>
             <textarea name="message" id="training-message" placeholder="Questions about the training course? (Optional)" rows="3"></textarea>
         </div>
+
+        <!-- reCAPTCHA v2 Checkbox Widget -->
+        <div class="12u$" style="margin-top: 1em; margin-bottom: 1em; display: flex; justify-content: center;"> <!-- Centering the widget -->
+            <div class="g-recaptcha" data-sitekey="6LeKiJkfAAAAACWBecAiuKn0zrVkDIzfuJOaPx0q"></div>
+        </div>
+        <!-- End reCAPTCHA Widget -->
+
         <div class="12u$">
             <ul class="actions" style="margin: 0;">
                 <li>
-                    <button type="submit"
-                            class="button special fit g-recaptcha"
-                            data-sitekey="6LeKiJkfAAAAACWBecAiuKn0zrVkDIzfuJOaPx0q">
+                    <button type="submit" class="button special fit"> <!-- Button is NOW A NORMAL SUBMIT BUTTON -->
                         Request Training Info
                     </button>
                 </li>
