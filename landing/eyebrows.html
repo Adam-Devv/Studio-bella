@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -6,7 +7,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="icon" href="../images/eyebrowBrowserTabIcon.jpg">
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" /> <!-- Added for icons -->
+		<link rel="icon" href="../assets/images/eyebrowBrowserTabIcon.jpg">
 
 		
 	<script src="../assets/js/globalHead.js"></script>
@@ -23,7 +25,7 @@
                 <h1>Perfect Permanent Eyebrows in Austin</h1>
                 <p>Wake up with flawless, natural-looking brows every day! Expert microblading, powder brows, and hair stroke techniques tailored to you by Master Technician Cookie Bandel.</p>
                 <ul class="actions">
-                    <li><a href="#consultation-form" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
+                    <li><a href="#consultation-form-container" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
                 </ul>
             </div>
         </section>
@@ -35,7 +37,7 @@
 				<!-- Above the Fold: Form + Benefits -->
 				<div class="row">
 					<div class="6u 12u$(medium)">
-						<span class="image fit"><img src="../images/beforeAfter/ba1.jpg" alt="Eyebrow Microblading Before After Austin" loading="lazy"></span>
+						<span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow1.webp" alt="Eyebrow Microblading Before After Austin" loading="lazy"></span>
                          <h2 style="margin-top: 1.5em;">Tired of Drawing on Your Brows?</h2>
 						<ul style="list-style: none; padding-left: 0;">
                             <li><i class="fa fa-check-circle" style="color: #c88ea5; margin-right: 8px;"></i> Save time every morning</li>
@@ -46,12 +48,13 @@
 					</div>
                     <div class="6u$ 12u$(medium)">
 						<!-- Container for the dynamically loaded form -->
-<div class="landing-form-section" id="consultation-form-container"
-data-subject="Landing Page Lead: Eyebrows"
-data-service="Eyebrows">
-<!-- The consultation-form.html content will be loaded here by load-form.js -->
-<p>Loading form...</p> <!-- Optional loading message -->
-</div>
+                        <div class="landing-form-section" id="consultation-form-container"
+                        data-subject="Landing Page Lead: Eyebrows"
+                        data-service="Eyebrows">
+                            <h3>Get Your Dream Brows!</h3>
+                            <p style="text-align: center; padding: 1em 0 0 0;">Fill out the quick form below for a free consultation.</p>
+                            <p style="text-align: center; padding: 2em 0;">Loading form...</p> <!-- Loading message -->
+                        </div>
 					</div>
 				</div>
 
@@ -76,7 +79,7 @@ data-service="Eyebrows">
                             </ul>
                         </div>
                         <div class="6u$ 12u$(medium)">
-                             <span class="image fit"><img src="../images/beforeAfter/ba1.jpg" alt="Microblading Hair Strokes Example Austin" loading="lazy"></span>
+                             <span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow2.webp" alt="Microblading Hair Strokes Example Austin" loading="lazy"></span>
                         </div>
                     </div>
                 </section>
@@ -85,7 +88,7 @@ data-service="Eyebrows">
                  <section>
                     <div class="row">
                          <div class="6u 12u$(medium)">
-                              <span class="image fit"><img src="../images/beforeAfter/ba7.jpg" alt="Powder Ombre Combination Brows Example Austin" loading="lazy"></span>
+                              <span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow7.webp" alt="Powder Ombre Combination Brows Example Austin" loading="lazy"></span>
                          </div>
                         <div class="6u$ 12u$(medium)">
                             <h3><i class="fa fa-cloud" aria-hidden="true" style="color: #c88ea5;"></i> Powder, Ombre & Combination Brows</h3>
@@ -104,25 +107,28 @@ data-service="Eyebrows">
 				<!-- Before/After Gallery -->
                 <section class="gallery-section">
                     <hr style="margin: 3em 0;">
-                    <header class="major">
+                    <header class="major special"> <!-- Made major special for centering -->
                         <h3>See the Transformation: Eyebrow Results</h3>
                     </header>
-                    <div class="box alt">
-                        <div class="row 50% uniform">
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba1.jpg" alt="Permanent Eyebrow Before After 1" loading="lazy"></span></div>
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba7.jpg" alt="Permanent Eyebrow Before After 2" loading="lazy"></span></div>
-                            <div class="4u$ 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba8.jpg" alt="Permanent Eyebrow Before After 3" loading="lazy"></span></div>
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba10.jpg" alt="Permanent Eyebrow Before After 4" loading="lazy"></span></div>
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba11.jpg" alt="Permanent Eyebrow Before After 5" loading="lazy"></span></div>
-                            <div class="4u$ 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba12.jpg" alt="Permanent Eyebrow Before After 6" loading="lazy"></span></div>
+                    <div class="box alt gallery-box">
+                        <div class="image-gallery">
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow1.webp" alt="Permanent Eyebrow Before After 1" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow7.webp" alt="Permanent Eyebrow Before After 2" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow8.webp" alt="Permanent Eyebrow Before After 3" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow10.webp" alt="Permanent Eyebrow Before After 4" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow5.webp" alt="Permanent Eyebrow Before After 5" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow6.webp" alt="Permanent Eyebrow Before After 6" loading="lazy"></span></div>
                         </div>
                     </div>
+                     <ul class="actions" style="justify-content: center; margin-top: 1.5em;">
+                        <li><a href="../beforeAfterGallery.html" class="button alt">View Full Eyebrow Gallery</a></li>
+                    </ul>
                 </section>
 
 				<!-- Testimonials -->
                 <section class="testimonials-section">
                      <hr style="margin: 3em 0;">
-                     <header class="major">
+                     <header class="major special"> <!-- Made major special for centering -->
                         <h3>What Our Clients Say</h3>
                      </header>
                      <blockquote>
@@ -142,7 +148,7 @@ data-service="Eyebrows">
                 </header>
 				<p>Stop stressing about your eyebrows! Schedule your complimentary consultation today with Cookie Bandel, Austin's trusted permanent makeup expert.</p>
 				<ul class="actions" style="justify-content: center;">
-                    <li><a href="#consultation-form" class="button special icon fa-calendar">Book My Free Consultation Now</a></li>
+                    <li><a href="#consultation-form-container" class="button special icon fa-calendar">Book My Free Consultation Now</a></li>
                     <li><a href="tel://15129668542" class="button alt icon fa-phone">Call Us: (512) 966-8542</a></li>
                 </ul>
 			</div>

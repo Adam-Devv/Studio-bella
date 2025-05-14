@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -6,7 +7,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="icon" href="../images/eyebrowBrowserTabIcon.jpg">
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" /> <!-- Added for icons -->
+		<link rel="icon" href="../assets/images/eyebrowBrowserTabIcon.jpg">
 
 		
 	<script src="../assets/js/globalHead.js"></script>
@@ -23,7 +25,7 @@
                 <h1>Beautiful Permanent Lips in Austin</h1>
                 <p>Get the perfect pout with Lip Blush and Permanent Lip Liner. Enhance color, define shape, and achieve fuller-looking lips that last!</p>
                 <ul class="actions">
-                    <li><a href="#consultation-form" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
+                    <li><a href="#consultation-form-container" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
                 </ul>
             </div>
         </section>
@@ -35,7 +37,7 @@
 				<!-- Above the Fold: Form + Benefits -->
 				<div class="row">
                     <div class="6u 12u$(medium)">
-						<span class="image fit"><img src="../images/beforeAfter/ba5.jpg" alt="Lip Blush Permanent Makeup Before After Austin" loading="lazy"></span>
+						<span class="image fit"><img src="../assets/images/beforeAfter/baLips1.webp" alt="Lip Blush Permanent Makeup Before After Austin" loading="lazy"></span>
                         <h2 style="margin-top: 1.5em;">Say Goodbye to Lipstick Smudges!</h2>
 						<ul style="list-style: none; padding-left: 0;">
                             <li><i class="fa fa-check-circle" style="color: #c88ea5; margin-right: 8px;"></i> Enjoy long-lasting, natural lip color</li>
@@ -45,19 +47,20 @@
                         </ul>
 					</div>
 					<div class="6u$ 12u$(medium)">
-                       
 						<div class="landing-form-section" id="consultation-form-container"
 						data-subject="Landing Page Lead: Lips"
 						data-service="Lips">
-					<p>Loading form...</p>
-					</div>
+                            <h3>Get Your Perfect Pout!</h3>
+                            <p style="text-align: center; padding: 1em 0 0 0;">Schedule a free consultation today.</p>
+					        <p style="text-align: center; padding: 2em 0;">Loading form...</p> <!-- Loading message -->
+					    </div>
 					</div>
 				</div>
 
                 <hr style="margin: 3em 0;">
 
 				<!-- More Details Section -->
-                <header class="major">
+                <header class="major special"> <!-- Made major special for centering -->
 				    <h2>Lip Blushing & Liner at Studio Bella</h2>
                 </header>
 				<p>Enhance your natural beauty with permanent lip procedures by Cookie Bandel. Whether you desire defined lip liner to accentuate your shape or a full lip blush for a wash of natural color, we customize the treatment to your goals. We discuss color selection extensively during your consultation. Even after the procedure heals, you can still apply different lipstick shades for special occasions!</p>
@@ -72,25 +75,28 @@
 				<!-- Before/After Gallery -->
                 <section class="gallery-section">
                     <hr style="margin: 3em 0;">
-                    <header class="major">
+                    <header class="major special"> <!-- Made major special for centering -->
                         <h3>See the Transformation: Lip Results</h3>
                     </header>
-                    <div class="box alt">
-                        <div class="row 50% uniform">
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba5.jpg" alt="Permanent Lip Color Before After 1" loading="lazy"></span></div>
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba6.jpg" alt="Permanent Lip Color Before After 2" loading="lazy"></span></div>
-                            <div class="4u$ 12u$(small)"><span class="image fit"><img src="../images/beforeAfter/ba13.jpg" alt="Permanent Lip Color Before After 3" loading="lazy"></span></div>
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/pic03.jpg" alt="Lip Enhancement Example 4" loading="lazy"></span></div>
-                            <div class="4u 12u$(small)"><span class="image fit"><img src="../images/pic04.jpg" alt="Lip Enhancement Example 5" loading="lazy"></span></div>
-                            <div class="4u$ 12u$(small)"><span class="image fit"><img src="../images/pic05.jpg" alt="Lip Enhancement Example 6" loading="lazy"></span></div>
+                    <div class="box alt gallery-box">
+                        <div class="image-gallery">
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baLips1.webp" alt="Permanent Lip Color Before After 1" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baLips2.webp" alt="Permanent Lip Color Before After 2" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/general_photos/lips1.webp" alt="Permanent Lip Color Example 3" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/general_photos/lips2.webp" alt="Lip Enhancement Example 4" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baLips1.webp" alt="Lip Enhancement Example 5" loading="lazy"></span></div> <!-- Re-used for example -->
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/general_photos/faceGeneric1.webp" alt="Lip Enhancement Example 6" loading="lazy"></span></div>
                         </div>
                     </div>
+                     <ul class="actions" style="justify-content: center; margin-top: 1.5em;">
+                        <li><a href="../beforeAfterGallery.html" class="button alt">View Full Lip Gallery</a></li>
+                    </ul>
                 </section>
 
 				<!-- Testimonials -->
                  <section class="testimonials-section">
                      <hr style="margin: 3em 0;">
-                     <header class="major">
+                     <header class="major special"> <!-- Made major special for centering -->
                         <h3>What Our Clients Say</h3>
                      </header>
                      <blockquote>
@@ -110,7 +116,7 @@
                 </header>
 				<p>Book your complimentary consultation today to discover how permanent lip makeup can enhance your natural beauty.</p>
 				<ul class="actions" style="justify-content: center;">
-                    <li><a href="#consultation-form" class="button special icon fa-calendar">Book My Free Lip Consultation Now</a></li>
+                    <li><a href="#consultation-form-container" class="button special icon fa-calendar">Book My Free Lip Consultation Now</a></li>
                     <li><a href="tel://15129668542" class="button alt icon fa-phone">Call Us: (512) 966-8542</a></li>
                 </ul>
 			</div>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -6,7 +7,8 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="icon" href="../images/eyebrowBrowserTabIcon.jpg">
+		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" /> <!-- Added for icons -->
+		<link rel="icon" href="../assets/images/eyebrowBrowserTabIcon.jpg">
 
 		
 	<script src="../assets/js/globalHead.js"></script>
@@ -23,7 +25,7 @@
                 <h1>Expert Permanent Makeup in Austin</h1>
                 <p>Enhance your natural beauty with safe, beautiful, natural-looking permanent cosmetics by Master Technician Cookie Bandel. Wake up ready every day!</p>
                 <ul class="actions">
-                    <li><a href="#consultation-form" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
+                    <li><a href="#consultation-form-container" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
                 </ul>
             </div>
         </section>
@@ -35,7 +37,7 @@
 				<!-- Above the Fold: Form + Benefits -->
 				<div class="row">
 					<div class="6u 12u$(medium)">
-						<span class="image fit"><img src="../images/CookieAWTrim.webp" alt="Cookie Bandel Master Permanent Makeup Technician Austin" loading="lazy"></span>
+						<span class="image fit"><img src="../assets/images/CookieAWTrim.webp" alt="Cookie Bandel Master Permanent Makeup Technician Austin" loading="lazy"></span>
                          <h2 style="margin-top: 1.5em;">Why Choose Studio Bella?</h2>
 						<ul style="list-style: none; padding-left: 0;">
                             <li><i class="fa fa-star" style="color: #c88ea5; margin-right: 8px;"></i> <strong>Expert Artistry:</strong> Master Tech Cookie Bandel (Since 2008).</li>
@@ -52,7 +54,6 @@
                             data-service="General PMU Inquiry">
                         <h3>Request Your Free Consultation!</h3>
                         <p style="text-align: center; padding: 1em 0 0 0;">Fill out the quick form below to get started.</p>
-                        <!-- The consultation-form.html content will be loaded here by load-form.js -->
                         <p style="text-align: center; padding: 2em 0;">Loading form...</p> <!-- Loading message -->
                         </div>
 					</div>
@@ -61,7 +62,7 @@
                 <hr style="margin: 3em 0;">
 
 				<!-- Service Overview Section -->
-                <header class="major">
+                <header class="major special"> <!-- Made major special for centering -->
 				    <h2>Our Permanent Makeup Services</h2>
                 </header>
                 <p>We offer a full range of permanent cosmetic services to enhance your natural beauty, including:</p>
@@ -92,22 +93,25 @@
                 <header class="major special">
                     <h2>Meet Your Artist: Cookie Bandel</h2>
                 </header>
-                 <p><span class="image left"><img src="../images/CookieAW.webp" style="max-width: 200px;" alt="Cookie Bandel Austin PMU Artist" loading="lazy"></span>Cookie Bandel, a Master Permanent Makeup Technician since 2008, is a trusted expert in the Austin cosmetic tattoo community. Featured in Austin Woman Magazine and on KVUE Austin, she is renowned for her meticulous artistry, commitment to safety, and ability to create beautiful, natural-looking results. Clients travel from across Texas and beyond for her specialized services, including intricate corrective work and paramedical procedures. Cookie is dedicated to understanding each client's unique goals and delivering personalized enhancements that boost confidence.</p>
+                 <p><span class="image left"><img src="../assets/images/CookieAWTrim.webp" style="max-width: 200px;" alt="Cookie Bandel Austin PMU Artist" loading="lazy"></span>Cookie Bandel, a Master Permanent Makeup Technician since 2008, is a trusted expert in the Austin cosmetic tattoo community. Featured in Austin Woman Magazine and on KVUE Austin, she is renowned for her meticulous artistry, commitment to safety, and ability to create beautiful, natural-looking results. Clients travel from across Texas and beyond for her specialized services, including intricate corrective work and paramedical procedures. Cookie is dedicated to understanding each client's unique goals and delivering personalized enhancements that boost confidence.</p>
+                 <ul class="actions" style="justify-content: center; margin-top: 1.5em;">
+                        <li><a href="../about.html" class="button alt">More About Cookie</a></li>
+                    </ul>
 
 				<!-- Before/After Gallery -->
                 <section class="gallery-section">
                     <hr style="margin: 3em 0;">
-                    <header class="major">
+                    <header class="major special"> <!-- Made major special for centering -->
                         <h3>See the Studio Bella Difference</h3>
                     </header>
-                    <div class="box alt gallery-box"> <!-- Added gallery-box class -->
-                        <div class="image-gallery"> <!-- Use the image-gallery container -->
-                            <div class="gallery-item"><span class="image fit"><img src="../images/beforeAfter/ba1.jpg" alt="Permanent Eyebrow Before After Austin" loading="lazy"></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="../images/beforeAfter/ba5.jpg" alt="Permanent Lip Blush Before After Austin" loading="lazy"></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="../images/beforeAfter/ba2.jpg" alt="Permanent Eyeliner Before After Austin" loading="lazy"></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="../images/beforeAfter/ba7.jpg" alt="Microblading Before After Austin" loading="lazy"></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="../images/beforeAfter/ba6.jpg" alt="Lip Color Before After Austin" loading="lazy"></span></div>
-                            <div class="gallery-item"><span class="image fit"><img src="../images/beforeAfter/ba4.jpg" alt="Eyeliner Enhancement Before After Austin" loading="lazy"></span></div>
+                    <div class="box alt gallery-box">
+                        <div class="image-gallery">
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow1.webp" alt="Permanent Eyebrow Before After Austin" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baLips1.webp" alt="Permanent Lip Blush Before After Austin" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyeliner1.webp" alt="Permanent Eyeliner Before After Austin" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyebrow7.webp" alt="Microblading Before After Austin" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baLips2.webp" alt="Lip Color Before After Austin" loading="lazy"></span></div>
+                            <div class="gallery-item"><span class="image fit"><img src="../assets/images/beforeAfter/baEyeliner4.webp" alt="Eyeliner Enhancement Before After Austin" loading="lazy"></span></div>
                         </div>
                     </div>
                     <ul class="actions" style="justify-content: center; margin-top: 1.5em;">
@@ -118,7 +122,7 @@
 				<!-- Testimonials -->
                 <section class="testimonials-section">
                      <hr style="margin: 3em 0;">
-                     <header class="major">
+                     <header class="major special"> <!-- Made major special for centering -->
                         <h3>What Our Clients Say</h3>
                      </header>
                      <blockquote>
@@ -133,12 +137,12 @@
 
 				<!-- Final CTA -->
 				<hr style="margin: 3em 0;">
-				<header class="major special" id="consultation-form"> <!-- Added ID for direct link -->
+				<header class="major special">
                     <h2>Ready to Enhance Your Natural Beauty?</h2>
                 </header>
 				<p>Take the first step towards effortless beauty and confidence. Schedule your complimentary, no-obligation consultation with Austin's trusted permanent makeup expert, Cookie Bandel.</p>
 				<ul class="actions" style="justify-content: center;">
-                    <li><a href="#consultation-form-container" class="button special icon fa-calendar">Book My Free Consultation Now</a></li> <!-- Link to form container div -->
+                    <li><a href="#consultation-form-container" class="button special icon fa-calendar">Book My Free Consultation Now</a></li>
                     <li><a href="tel://15129668542" class="button alt icon fa-phone">Call Us: (512) 966-8542</a></li>
                 </ul>
 			</div>
