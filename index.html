@@ -298,17 +298,24 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
+    <!-- Final CTA with Form -->
     <section id="final-cta" style="padding: 4em 0;">
          <div class="inner text-center">
               <header class="major special">
                  <h2>Ready to Simplify Your Beauty Routine?</h2>
               </header>
-              <p>Discover the confidence and convenience of expertly applied permanent makeup. Schedule your free, no-obligation consultation with Cookie Bandel today!</p>
-               <ul class="actions" style="justify-content: center;">
-                    <li><a href="consultation.html" class="button special icon fa-calendar">Book Your Free Consultation</a></li>
-                    <li><a href="contact.html" class="button alt icon fa-envelope">Ask a Question</a></li>
-                </ul>
+              <p style="margin-bottom: 2.5em;">Discover the confidence and convenience of expertly applied permanent makeup. Schedule your free, no-obligation consultation with Cookie Bandel by filling out the form below!</p>
+              
+              <!-- Consultation Form Container -->
+              <div style="max-width: 700px; margin: 0 auto; text-align: left;">
+                  <div class="landing-form-section" id="consultation-form-container"
+                      data-subject="Consultation Request (Homepage)"
+                      data-service="Homepage Consultation Inquiry">
+                      <h3 style="margin-top:0; margin-bottom: 1em; text-align: center;">Request Your Free Consultation</h3>
+                      <!-- The consultation-form.html content will be loaded here by load-form.js -->
+                      <p style="text-align: center; padding: 1em 0;">Loading booking form...</p>
+                  </div>
+              </div>
          </div>
     </section>
 
@@ -322,6 +329,8 @@
     <script src="assets/js/main.js"></script>
     <!-- Social Proof Slider Script needed for the included section -->
     <script src="assets/js/social-proof-slider.js"></script>
+    <!-- ADDED: Script to load the consultation form -->
+    <script src="assets/js/load-form.js"></script>
 
 </body>
 </html>
