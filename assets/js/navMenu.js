@@ -17,6 +17,7 @@
                     <a href="${basePath}services.html">Services</a>
                     <a href="${basePath}faq.html">FAQ</a>
                     <a href="${basePath}beforeAfterGallery.html">Before/After</a>
+                    <a href="${basePath}teeth-whitening.html">Teeth Whitening</a>
                     <a href="${basePath}blog.html">Blog</a>
                     <a href="${basePath}training.html">Training</a>
                     <a href="${basePath}about.html">About</a>

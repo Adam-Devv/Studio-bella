@@ -31,7 +31,7 @@
                     <h4>Contact</h4>
                     <ul style="color:white; list-style: none; padding-left: 0;">
                         <li><i class="fa fa-map-marker" aria-hidden="true" style="margin-right: 8px;"></i> <a href="https://maps.app.goo.gl/CFUm4szhaurXJqWY9" target="_blank">6611 Riverplace Boulevard<br><span style="padding-left: 20px;">Suite 101, Austin, TX 78730</span><br><span style="padding-left: 20px;">Medical Towers at Riverplace</span></a></li>
-                        <li style="margin-top: 1em;"><i class="fa fa-phone" aria-hidden="true" style="margin-right: 8px;"></i> <a href="tel://15129668542">512 966 8542</a></li>
+                        <li style="margin-top: 1em;"><i class="fa fa-phone" aria-hidden="true" style="margin-right: 8px;"></i> <a href="tel://15125020002">512 502 0002</a></li>
                         <li style="margin-top: 1em;"><i class="fa fa-envelope" aria-hidden="true" style="margin-right: 8px;"></i> <a href="mailto:studiobellaspaaustin@gmail.com">StudioBellaSpaAustin@gmail.com</a></li>
                     </ul>
                     <!-- Begin Mailchimp Signup Form -->
