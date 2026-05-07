@@ -9,6 +9,8 @@
     var headerHTML = `
         <div id="top-cta-bar">
              <a href="${basePath}consultation.html">Book Your Free Consult</a>
+             <span style="margin: 0 0.75em; opacity: 0.5;" aria-hidden="true">|</span>
+             <a href="${basePath}booking.html">Book Appointment</a>
         </div>
         <header id="header">
             <div class="inner">

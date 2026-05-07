@@ -13,6 +13,8 @@
                 <div class="6u 12u$(xsmall)">
                     <h4>Additional Links</h4>
                     <ul>
+                        <li><a href="${basePath}booking.html">Book Appointment</a></li>
+                        <li><a href="${basePath}consultation.html">Book Free Consultation</a></li>
                         <li><a href="${basePath}giftcertificates.html">Gift Certificates</a></li>
                         <li><a href="${basePath}specials.html">Specials & Offers</a></li>
                         <li><a href="${basePath}blog.html">Blog</a></li>

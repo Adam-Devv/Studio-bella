@@ -44,7 +44,7 @@
 				}
 
 				/* Ensure the form container doesn't push things down */
-				#consultation-form-container {
+				#consultation-widget-container {
 					margin-top: 0 !important;
 				}
 			}
@@ -86,7 +86,7 @@
 					<h1>Book Your Free Consultation</h1>
 					<p>Ready to explore the possibilities of effortless beauty with permanent makeup?</p>
 				</header>
-				<p style="text-align:center; margin-bottom: 2em;">Schedule your complimentary, no-obligation consultation with Master Technician <a href="about.html">Cookie Bandel</a>. Discuss your goals, get personalized advice, and see how we can enhance your natural features. Fill out the quick form below!</p>
+				<p style="text-align:center; margin-bottom: 2em;">Schedule your complimentary, no-obligation consultation with Master Technician <a href="about.html">Cookie Bandel</a>. Discuss your goals, get personalized advice, and see how we can enhance your natural features. Use the booking widget below to schedule online — in person at our Austin studio or virtually via Zoom.</p>
 
 				<!-- Top Section: Form + Image/Benefits Side-by-Side -->
 				<!-- Using the standard row class, relying on CSS override -->
@@ -94,13 +94,13 @@
 					<!-- Left Column: Form -->
 					<div class="6u 12u$(medium)">
 						<!-- Container for the dynamically loaded form -->
-						<div class="landing-form-section" id="consultation-form-container"
+						<div class="landing-form-section" id="consultation-widget-container"
 							 data-subject="Consultation Booking Request (Main Site)"
 							 data-service="General Consultation Inquiry"
                              style="padding: 1.5em;">
                             <h3 style="margin-top:0; margin-bottom: 1em; text-align: center;">Request Your Appointment</h3>
 							<!-- The consultation-form.html content will be loaded here by load-form.js -->
-							<p style="text-align: center; padding: 1em 0;">Loading booking form...</p>
+							<div style="text-align: center; margin: 1.5em 0;"><!-- Start Square Appointments Embed Code --><script src='https://app.squareup.com/appointments/buyer/widget/1039acc6-99a0-4327-99e1-3fae4bcc3397/A8998XB3VQAWZ.js'></script><!-- End Square Appointments Embed Code --></div>
 						</div>
 					</div>
 
@@ -190,7 +190,7 @@
                         </div>
                     </div>
 
-					<p class="text-center" style="margin-top: 3em;"><strong>Ready to chat? Fill out the form above or <a href="contact.html">contact us directly</a>!</strong></p>
+					<p class="text-center" style="margin-top: 3em;"><strong>Ready to chat? Use the booking widget above or <a href="contact.html">contact us directly</a>!</strong></p>
 				</article>
 
 			</div>
