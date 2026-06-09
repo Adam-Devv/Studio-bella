@@ -6,18 +6,18 @@
         <meta name="keywords" content="permanent makeup training austin, pmu classes austin, microblading training austin, pmu certification texas, learn permanent makeup, studio bella academy"> <!-- Added keywords -->
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="../assets/css/main.css" />
-		<link rel="stylesheet" href="../assets/css/font-awesome.min.css" /> <!-- Added Font Awesome -->
-		<link rel="icon" href="../assets/images/eyebrowBrowserTabIcon.jpg"> <!-- Corrected Path -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" /> <!-- Added Font Awesome -->
+		<link rel="icon" href="assets/images/eyebrowBrowserTabIcon.jpg"> <!-- Corrected Path -->
 
 		
-	<script src="../assets/js/globalHead.js"></script> <!-- Corrected Path -->
+	<script src="assets/js/globalHead.js"></script> <!-- Corrected Path -->
 </head>
 	<body class="landing-page landing-training">
 		
 
 		<!-- Import NavMenu -->
-		<script language="javascript" type="text/javascript" src="../assets/js/navMenu.js"></script> <!-- Corrected Path -->
+		<script language="javascript" type="text/javascript" src="assets/js/navMenu.js"></script> <!-- Corrected Path -->
 
         <!-- Landing Hero Section -->
         <section id="landing-hero">
@@ -25,7 +25,7 @@
                  <h1>Become a Certified PMU Artist in Austin</h1>
                  <p>Launch your successful career with our comprehensive 5-Day All-Inclusive Permanent Makeup Training Course.</p>
                  <ul class="actions">
-                    <li><a href="#info-form-container" class="button special icon fa-graduation-cap">Request Course Information</a></li>
+                    <li><a href="#info-form" class="button special icon fa-graduation-cap">Request Course Information</a></li>
                 </ul>
             </div>
         </section>
@@ -37,7 +37,7 @@
 				<!-- Above the Fold: Form + Benefits -->
 				<div class="row">
 					<div class="6u 12u$(medium)">
-						<span class="image fit"><img src="../assets/images/general_photos/technician_working_eyeliner.webp" alt="Permanent Makeup Training Course Austin" loading="lazy"></span> <!-- Corrected Image Path -->
+						<span class="image fit"><img src="assets/images/general_photos/technician_working_eyeliner.webp" alt="Permanent Makeup Training Course Austin" loading="lazy"></span> <!-- Corrected Image Path -->
                          <h2 style="margin-top: 1.5em;">Why Choose Studio Bella PMU Academy?</h2>
 						<ul style="list-style: none; padding-left: 0;">
                             <li><i class="fa fa-check-circle" style="color: #c88ea5; margin-right: 8px;"></i> <strong>Comprehensive Curriculum:</strong> Lips, liner, brows, corrections & more.</li>
@@ -47,10 +47,10 @@
                             <li><i class="fa fa-check-circle" style="color: #c88ea5; margin-right: 8px;"></i> <strong>Expert Instruction:</strong> Learn from Master Technician Cookie Bandel.</li>
                         </ul>
 					</div>
-					<div class="6u$ 12u$(medium)">
+					<div class="6u$ 12u$(medium)" id="info-form">
 						<!-- Container for the dynamically loaded training form -->
-                        <div class="landing-form-section" id="info-form-container"> <!-- Changed ID to match button and load-form.js expectation -->
-                            <div id="training-form-container" <!-- This inner div is targeted by load-form.js -->
+                        <div class="landing-form-section">
+                            <div id="training-form-container"
                                 data-subject="Landing Page Lead: Training Ad"
                                 data-source="Training Landing Page Inquiry">
                                 <h3 style="margin-top:0; margin-bottom: 1em; text-align: center;">Get Started - Request Info!</h3>
@@ -197,8 +197,22 @@
                 <header style="margin-top: 2em;">
                     <h3>Nearby Accommodations</h3>
                 </header>
-                <p>Students traveling from out of town can stay at the <strong>Residence Inn Austin Lake Travis/River Place</strong>, located within walking distance of the studio.</p>
-                <span class="image fit"><img src="../assets/images/residence-inn.jfif" alt="Residence Inn Austin Lake Travis/River Place" loading="lazy"></span>
+                <div class="row">
+                    <div class="5u 12u$(medium)">
+                        <span class="image fit"><img src="assets/images/residence-inn.jfif" alt="Residence Inn by Marriott Austin Lake Travis/River Place" loading="lazy"></span>
+                    </div>
+                    <div class="7u$ 12u$(medium)">
+                        <p>Studio Bella students traveling from out of town can ask for special rates at <strong>Residence Inn by Marriott Austin Lake Travis/River Place</strong>. The hotel is one building away from the academy, within walking distance, and breakfast is included every day.</p>
+                        <ul>
+                            <li><strong>Address:</strong> 6608 River Place, Austin, Texas 78730</li>
+                            <li><strong>Phone:</strong> <a href="tel://15127359300">512 735 9300</a></li>
+                            <li><strong>Breakfast:</strong> Free full American breakfast for hotel guests</li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="https://www.marriott.com/en-us/hotels/ausla-residence-inn-austin-lake-travis-river-place/overview/" class="button alt icon fa-external-link" target="_blank" rel="noopener noreferrer">Visit Residence Inn Website</a></li>
+                        </ul>
+                    </div>
+                </div>
 
 				<!-- Testimonials -->
                 <section class="testimonials-section">
@@ -223,20 +237,20 @@
                 </header>
 				<p>Spaces are limited! Request more information or contact us to secure your spot in the next Studio Bella Permanent Makeup Training Course.</p>
 				<ul class="actions" style="justify-content: center;">
-                    <li><a href="#info-form-container" class="button special icon fa-graduation-cap">Request Training Info Now</a></li>
+                    <li><a href="#info-form" class="button special icon fa-graduation-cap">Request Training Info Now</a></li>
                     <li><a href="tel://15125020002" class="button alt icon fa-phone">Call Us: (512) 502-0002</a></li>
                 </ul>
 			</div>
 		</section>
 
 		<!-- Import Footer -->
-		<script language="javascript" type="text/javascript" src="../assets/js/footer.js"></script> <!-- Corrected Path -->
+		<script language="javascript" type="text/javascript" src="assets/js/footer.js"></script> <!-- Corrected Path -->
 
 		<!-- Scripts -->
-		<script src="../assets/js/jquery.min.js"></script> <!-- Corrected Path -->
-		<script src="../assets/js/skel.min.js"></script> <!-- Corrected Path -->
-		<script src="../assets/js/util.js"></script> <!-- Corrected Path -->
-		<script src="../assets/js/main.js"></script> <!-- Corrected Path -->
-        <script src="../assets/js/load-form.js"></script> <!-- Corrected Path -->
+		<script src="assets/js/jquery.min.js"></script> <!-- Corrected Path -->
+		<script src="assets/js/skel.min.js"></script> <!-- Corrected Path -->
+		<script src="assets/js/util.js"></script> <!-- Corrected Path -->
+		<script src="assets/js/main.js"></script> <!-- Corrected Path -->
+        <script src="assets/js/load-form.js"></script> <!-- Corrected Path -->
 	</body>
 </html>
